@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bih5rnqr80vcd"]
+
+[ext_resource type="Script" uid="uid://j40ewyxymvk1" path="res://levels/level.gd" id="2_hjsbj"]
+
+[node name="Level" type="Node" unique_id=2013144942]
+script = ExtResource("2_hjsbj")
+metadata/_custom_type_script = "uid://j40ewyxymvk1"
+
+[node name="TileMapLayerContianer" type="Node2D" parent="." unique_id=1100584436]

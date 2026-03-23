@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ddo1mqskyb7nl"]
+
+[ext_resource type="Script" uid="uid://bwcnbqrak4j58" path="res://managers/resourve_manager/resource_manager.gd" id="1_ibike"]
+
+[node name="ResourceManager" type="Node" unique_id=1353623182]
+process_mode = 3
+script = ExtResource("1_ibike")

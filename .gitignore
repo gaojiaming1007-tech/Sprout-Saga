@@ -1,0 +1,6 @@
+.godot/
+export.cfg
+export_presets.cfg
+*.translation
+*.tmp
+addons/imgui-godot/bin/*
