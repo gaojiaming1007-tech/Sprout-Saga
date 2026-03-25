@@ -26,7 +26,17 @@ const SEASON = {
 
 var current_level_instance:Level
 
+@export var camera:Camera
+
+@export var character:Character
+
 signal level_loaded
+
+func _enter_tree()->void:
+    GameManager.game = self
+
+func _exit_tree()->void:
+    GameManager.game = null
 
 func _ready()->void:
     load_level(LevelTpye.Birth)
@@ -38,6 +48,8 @@ func load_level(level:LevelTpye):
          func(scene: Resource):
             current_level_instance = scene.instantiate()
             add_child(current_level_instance)
+            camera.set_limit()
+            camera.set_follow_target(character)
             level_loaded.emit()
             callback.call(),
          func(process: float):
@@ -59,13 +71,16 @@ func load_level(level:LevelTpye):
 
 func switch_seaon(season:Season):
     var switch = func():
-       var tile_map_layers:Array[TileMapLayer] = []
-       for child in current_level_instance.get_all_tile_map_layers():
-        if child is TileMapLayer:
-            if child.has_meta("seasonal")&&child.get_meta("seasonal"):
-                tile_map_layers.push_back(child)
+        var tile_map_layers:Array[TileMapLayer] = []
+        for child in current_level_instance.get_all_tile_map_layers():
+            if child is TileMapLayer:
+                print(child.get_meta_list())
+                if child.has_meta("seasonal")&&child.get_meta("seasonal"):
+                    tile_map_layers.push_back(child)
 
-        var season_tilest_resource:Resource = ResourceManager.load_resource("G:/Godot/sprout-sage-1.0/used/tileset/%s.tres"%[SEASON[season]])
+        print(tile_map_layers)
+       
+        var season_tilest_resource:Resource = ResourceManager.load_resource("res://used/tileset/%s/%s.tres"%[SEASON[season],SEASON[season]])
         for layer in tile_map_layers:
             layer.tile_set = season_tilest_resource 
 

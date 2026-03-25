@@ -17,9 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GameManager="*uid://c8pabondwy1v7"
 ImGuiRoot="*uid://dugmpnsxaagba"
 LoadingManager="*uid://1xtc63hpoub"
 ResourceManager="*uid://ddo1mqskyb7nl"
+PhantomCameraManager="*uid://duq6jhf6unyis"
 
 [display]
 
@@ -31,11 +33,12 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/imgui-godot/plugin.cfg")
+enabled=PackedStringArray("res://addons/imgui-godot/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [physics]
 
 3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
 
 [rendering]
 
