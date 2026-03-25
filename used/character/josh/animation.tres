@@ -1,0 +1,25 @@
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://ciwjhyf7ivcp8"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hoj15"]
+animation = &"idle_backward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_afq1d"]
+animation = &"idle_parallel"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2647b"]
+animation = &"idle_forward"
+
+[sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_ic6qk"]
+
+[resource]
+graph_offset = Vector2(-195.18735, -34.274475)
+nodes/output/position = Vector2(980, 180)
+nodes/Blend3/node = SubResource("AnimationNodeBlend3_ic6qk")
+nodes/Blend3/position = Vector2(640, 120)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_2647b")
+nodes/Animation/position = Vector2(260, 60)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_hoj15")
+"nodes/Animation 2/position" = Vector2(40, 240)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_afq1d")
+"nodes/Animation 3/position" = Vector2(220, 320)
+node_connections = [&"output", 0, &"Blend3", &"Blend3", 0, &"Animation", &"Blend3", 1, &"Animation 2", &"Blend3", 2, &"Animation 3"]
