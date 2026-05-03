@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bsxf62qcegppo"]
+
+[ext_resource type="Script" uid="uid://bicmk7lnehf6a" path="res://compoents/character/children/attribute/attribute.gd" id="1_3i1xa"]
+[ext_resource type="PackedScene" uid="uid://bods2h2oe1pl5" path="res://compoents/character/children/attribute/children/bag/bag.tscn" id="2_hg5ht"]
+[ext_resource type="PackedScene" uid="uid://bdf3cea24uqyt" path="res://compoents/character/children/attribute/children/hold/hold.tscn" id="3_b7heq"]
+
+[node name="Attribute" type="CanvasLayer" unique_id=1019521583 node_paths=PackedStringArray("bag", "hold")]
+script = ExtResource("1_3i1xa")
+bag = NodePath("Bag")
+hold = NodePath("Hold")
+metadata/_custom_type_script = "uid://bicmk7lnehf6a"
+
+[node name="Bag" parent="." unique_id=1351068144 instance=ExtResource("2_hg5ht")]
+
+[node name="Hold" parent="." unique_id=2037234211 instance=ExtResource("3_b7heq")]

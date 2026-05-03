@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterResource" format=3]
+
+[ext_resource type="Resource" path="res://resources/bag_resource.tres" id="1_aboam"]
+[ext_resource type="Script" path="res://structs/character_resource.gd" id="1_l285a"]
+[ext_resource type="Resource" path="res://resources/hold_resource.tres" id="2_vagvm"]
+
+[resource]
+script = ExtResource("1_l285a")
+bag = ExtResource("1_aboam")
+hold = ExtResource("2_vagvm")
+current_hold_select = 5
+metadata/_custom_type_script = "uid://xny7ifjw4b3h"

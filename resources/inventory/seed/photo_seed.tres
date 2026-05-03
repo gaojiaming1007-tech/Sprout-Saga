@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://bwiam10retnt4"]
+
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_2wibq"]
+[ext_resource type="Texture2D" uid="uid://d3sb0tpaxnr5q" path="res://used/inventory/photo_seed_highlight.atlastex" id="1_5okq0"]
+[ext_resource type="Texture2D" uid="uid://bka3g6gk4lplj" path="res://used/inventory/photo_seed.atlastex" id="2_tc81x"]
+
+[resource]
+script = ExtResource("1_2wibq")
+id = 3000
+texture = ExtResource("2_tc81x")
+highlight_texture = ExtResource("1_5okq0")
+name = "土豆种子"
+description = "能够种出好多土豆"
+type = 3
+price = 1
+stack = true
+lift = true

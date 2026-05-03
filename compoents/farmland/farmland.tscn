@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dvkfkydxkfw5q"]
+
+[ext_resource type="Script" uid="uid://cngnen34jat8w" path="res://compoents/farmland/farmland.gd" id="1_rv88i"]
+[ext_resource type="Texture2D" uid="uid://dhdsyo3vv64wt" path="res://compoents/farmland/wet_soil.atlastex" id="2_cp87i"]
+
+[node name="Farmland" type="Node2D" unique_id=1735277758 node_paths=PackedStringArray("sf", "wet")]
+z_index = 200
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_rv88i")
+sf = NodePath("SF")
+wet = NodePath("Wet")
+metadata/_custom_type_script = "uid://cngnen34jat8w"
+
+[node name="Wet" type="Sprite2D" parent="." unique_id=259283055]
+texture = ExtResource("2_cp87i")
+centered = false
+
+[node name="SF" type="Sprite2D" parent="." unique_id=1184059658]
+centered = false
+offset = Vector2(0, -4)

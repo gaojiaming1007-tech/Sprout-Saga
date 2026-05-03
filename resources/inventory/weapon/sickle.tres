@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://dcl7ltigjr7jf"]
+
+[ext_resource type="Texture2D" uid="uid://bggsr06q0fybu" path="res://used/inventory/sickle_highlight.atlastex" id="1_6wdov"]
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_2002o"]
+[ext_resource type="Texture2D" uid="uid://mh4qw1r0g2hk" path="res://used/inventory/sickle.atlastex" id="2_blunn"]
+
+[resource]
+script = ExtResource("1_2002o")
+id = 1
+texture = ExtResource("2_blunn")
+highlight_texture = ExtResource("1_6wdov")
+name = "镰刀"
+description = "收割农作物"
+price = 10

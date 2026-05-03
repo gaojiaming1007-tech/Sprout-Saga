@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bpi68shjykwvf"]
+
+[ext_resource type="Script" uid="uid://due6plworjj1w" path="res://compoents/highlight_area/highlight_area.gd" id="1_e3dhg"]
+
+[node name="HighlightArea" type="Area2D" unique_id=78434653]
+script = ExtResource("1_e3dhg")
+metadata/_custom_type_script = "uid://due6plworjj1w"
+
+[connection signal="body_entered" from="." to="." method="_on_character_entered"]
+[connection signal="body_exited" from="." to="." method="_on_character_exited"]

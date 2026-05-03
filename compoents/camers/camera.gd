@@ -15,6 +15,7 @@ func set_limit():
 
 func set_follow_target(target:Character):
     if !phantom_camera2D.follow_target:
-        phantom_camera2D.follow_target = target
+        phantom_camera2D.set_follow_target(target)
+
 
     phantom_camera2D.teleport_position()

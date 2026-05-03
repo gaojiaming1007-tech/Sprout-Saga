@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://58w1k00yi34u"]
+
+[ext_resource type="Texture2D" uid="uid://c5san45ijfyxo" path="res://used/inventory/fishing_rod_highlight.atlastex" id="1_a8qpv"]
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_yj2o6"]
+[ext_resource type="Texture2D" uid="uid://cv7acp27jxyfb" path="res://used/inventory/fishing_rod.atlastex" id="2_gaq26"]
+
+[resource]
+script = ExtResource("1_yj2o6")
+id = 6001
+texture = ExtResource("2_gaq26")
+highlight_texture = ExtResource("1_a8qpv")
+name = "钓鱼竿"
+description = "可以钓到基础的鱼类"
+type = 6
+price = 10

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FellableTreeResource" format=3 uid="uid://cuyjryob0vcyd"]
+
+[ext_resource type="Texture2D" uid="uid://dktcpm26cdvit" path="res://resources/fellable_tree/maple/collapse.atlastex" id="1_l2t1t"]
+[ext_resource type="Script" uid="uid://45wgv1sttgp3" path="res://structs/fellable_tree_resource.gd" id="2_f8b25"]
+[ext_resource type="Texture2D" uid="uid://be33n26m06f4c" path="res://resources/fellable_tree/maple/stump.atlastex" id="3_38q6l"]
+[ext_resource type="Texture2D" uid="uid://dfbushthbeb2m" path="res://resources/fellable_tree/maple/whole.atlastex" id="4_qquc6"]
+[ext_resource type="Resource" uid="uid://c0nir6ffa0vv6" path="res://resources/inventory/material/wood.tres" id="5_f8b25"]
+
+[resource]
+script = ExtResource("2_f8b25")
+whole_atlas = ExtResource("4_qquc6")
+stump_atlas = ExtResource("3_38q6l")
+collapse_altas = ExtResource("1_l2t1t")
+times = 4
+destroy_times = 6
+wood = ExtResource("5_f8b25")
+metadata/_custom_type_script = "uid://45wgv1sttgp3"

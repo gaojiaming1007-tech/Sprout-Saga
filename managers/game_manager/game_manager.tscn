@@ -1,10 +1,7 @@
-[gd_scene format=3 uid="uid://c8pabondwy1v7"]
+[gd_scene format=3 uid="uid://bxsmx1kamcgkx"]
 
-[ext_resource type="Script" uid="uid://h0ci3li83pob" path="res://managers/game_manager/game_manager.gd" id="1_lh1k3"]
+[ext_resource type="Script" uid="uid://yewmboqau0bf" path="res://managers/game_manager/game_manager.gd" id="1_lh1k3"]
 
-[node name="GameManager" type="Node" unique_id=537631032]
+[node name="GameManager" type="Node2D" unique_id=696454895]
 process_mode = 3
 script = ExtResource("1_lh1k3")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=775060975]
-top_level = true

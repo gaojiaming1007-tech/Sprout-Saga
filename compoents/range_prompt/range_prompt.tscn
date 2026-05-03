@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b6ehfsx5co6u8"]
+
+[ext_resource type="Script" uid="uid://c75ev3pvqebfg" path="res://compoents/range_prompt/range_prompt.gd" id="1_geff2"]
+[ext_resource type="Shader" uid="uid://c8f6w18jr3g50" path="res://shaders/range_flash.gdshader" id="2_470il"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_geff2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m78yq"]
+shader = ExtResource("2_470il")
+shader_parameter/grid_x = 3
+shader_parameter/grid_y = 3
+shader_parameter/padding = 0.30000001425
+shader_parameter/duration = 1.5000000679901202
+shader_parameter/alpha = 0.8
+
+[node name="RangePrompt" type="Node2D" unique_id=1331660825 node_paths=PackedStringArray("area", "shape", "color_rect")]
+z_index = 250
+script = ExtResource("1_geff2")
+area = NodePath("Area2D")
+shape = NodePath("Area2D/CollisionShape2D")
+color_rect = NodePath("ColorRect")
+metadata/_custom_type_script = "uid://c75ev3pvqebfg"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1196685137]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=691490801]
+shape = SubResource("RectangleShape2D_geff2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1703932679]
+material = SubResource("ShaderMaterial_m78yq")
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

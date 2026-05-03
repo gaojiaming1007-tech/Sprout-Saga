@@ -1,0 +1,271 @@
+[gd_scene format=3 uid="uid://b6vgvgkc6o3ob"]
+
+[ext_resource type="Script" uid="uid://b1xjb0fbjf5pj" path="res://addons/inventory_editor/inventory_editor.gd" id="1_lrgmw"]
+[ext_resource type="Resource" uid="uid://duedcg80warjo" path="res://addons/inventory_editor/inventory_list.tres" id="2_h5oef"]
+[ext_resource type="PackedScene" uid="uid://vt4bmulfsx3k" path="res://addons/inventory_editor/childern/inventory_item/inventory_item.tscn" id="3_q4x63"]
+[ext_resource type="Theme" uid="uid://djtbrsl3apmot" path="res://addons/inventory_editor/editor_theme.tres" id="4_m4we8"]
+[ext_resource type="Texture2D" uid="uid://c1jkxehy5ojor" path="res://used/inventory/hoe.atlastex" id="5_6fjt0"]
+
+[node name="InventoryEditor" type="Control" unique_id=970382860]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_lrgmw")
+inventory_list = ExtResource("2_h5oef")
+inventory_item = ExtResource("3_q4x63")
+metadata/_custom_type_script = "uid://b1xjb0fbjf5pj"
+
+[node name="Root" type="ColorRect" parent="." unique_id=367000944]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 1440.0
+offset_bottom = 810.0
+theme = ExtResource("4_m4we8")
+color = Color(0.12941177, 0.12941177, 0.12941177, 1)
+
+[node name="Left" type="ColorRect" parent="Root" unique_id=182577855]
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 810.0
+color = Color(0.14901961, 0.18039216, 0.17254902, 1)
+
+[node name="Add" type="Button" parent="Root/Left" unique_id=1922277458]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 40.0
+text = "添加"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Root/Left" unique_id=580196420]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ListContainer" type="VBoxContainer" parent="Root/Left/ScrollContainer" unique_id=1731498310]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="Right" type="ColorRect" parent="Root" unique_id=826393742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14644991, 0.14644991, 0.14644991, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Root/Right" unique_id=1486955715]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Right/ScrollContainer" unique_id=617252695]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/Right/ScrollContainer/VBoxContainer" unique_id=1476790576]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=697028420]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "ID:"
+
+[node name="ID" type="SpinBox" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1765439234]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 9999.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Root/Right/ScrollContainer/VBoxContainer" unique_id=1917633532]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=586940614]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "贴图:"
+
+[node name="Control" type="Control" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=926474]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureButton" type="Button" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer2/Control" unique_id=289752241]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Texture" type="TextureRect" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer2/Control" unique_id=1358752640]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_6fjt0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Root/Right/ScrollContainer/VBoxContainer" unique_id=1844626300]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=509940819]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "高亮贴图:"
+
+[node name="Control" type="Control" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1088770772]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="HighlightButton" type="Button" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer3/Control" unique_id=2101079254]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HightlightTexture" type="TextureRect" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer3/Control" unique_id=720934040]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Root/Right/ScrollContainer/VBoxContainer" unique_id=1343646939]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=838194091]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "名称:"
+
+[node name="Name" type="TextEdit" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=390827022]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Root/Right/ScrollContainer/VBoxContainer" unique_id=1385741745]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=1001057921]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "介绍:"
+
+[node name="Description" type="TextEdit" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=146767158]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Root/Right/ScrollContainer/VBoxContainer" unique_id=232402618]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=1579901776]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "类型:"
+
+[node name="Type" type="OptionButton" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=620004439]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 9
+popup/item_0/text = "武器"
+popup/item_0/id = 0
+popup/item_1/text = "防具"
+popup/item_1/id = 1
+popup/item_2/text = "材料"
+popup/item_2/id = 2
+popup/item_3/text = "种子"
+popup/item_3/id = 3
+popup/item_4/text = "食物"
+popup/item_4/id = 4
+popup/item_5/text = "药品"
+popup/item_5/id = 5
+popup/item_6/text = "工具"
+popup/item_6/id = 6
+popup/item_7/text = "果实"
+popup/item_7/id = 7
+popup/item_8/text = "建筑"
+popup/item_8/id = 8
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Root/Right/ScrollContainer/VBoxContainer" unique_id=219964764]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=1831897194]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "价格:"
+
+[node name="Price" type="SpinBox" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=135017814]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 9999.0
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="Root/Right/ScrollContainer/VBoxContainer" unique_id=1094568774]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=1123021726]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "堆叠："
+
+[node name="Stack" type="CheckButton" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=840742049]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="Root/Right/ScrollContainer/VBoxContainer" unique_id=307138097]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer9" unique_id=2071318340]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "举起:"
+
+[node name="Lift" type="CheckButton" parent="Root/Right/ScrollContainer/VBoxContainer/HBoxContainer9" unique_id=1377442748]
+unique_name_in_owner = true
+layout_mode = 2

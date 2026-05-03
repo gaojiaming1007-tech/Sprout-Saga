@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://diq2b5lhgmkeh"]
+
+[ext_resource type="Texture2D" uid="uid://c7s7e61d44oq2" path="res://Assets/Logo.png" id="1_q2kwv"]
+
+[node name="Node2D" type="Node2D" unique_id=491097142]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=143481800]
+texture = ExtResource("1_q2kwv")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1967268523]
+position = Vector2(-165, -37)

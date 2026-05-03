@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dyg3hyhrxut6j"]
+
+[ext_resource type="Script" uid="uid://up4hw5h4eydv" path="res://compoents/inventory_info_popup/inventory_info_popup.gd" id="1_hkhcb"]
+[ext_resource type="Texture2D" uid="uid://br2fnb68xescq" path="res://used/ui/bag_panel.atlastex" id="2_ruh0u"]
+[ext_resource type="Texture2D" uid="uid://s5e0urytao67" path="res://used/inventory/photo.atlastex" id="3_ftxji"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ftxji"]
+texture = ExtResource("2_ruh0u")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="InventoryInfoPopop" type="CanvasLayer" unique_id=1369004803 node_paths=PackedStringArray("root")]
+layer = 10
+script = ExtResource("1_hkhcb")
+root = NodePath("Root")
+metadata/_custom_type_script = "uid://up4hw5h4eydv"
+
+[node name="Root" type="PanelContainer" parent="." unique_id=738250355]
+offset_right = 20.0
+offset_bottom = 20.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ftxji")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root" unique_id=1097528967]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="Root/VBoxContainer" unique_id=1591338866]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Icon" type="TextureRect" parent="Root/VBoxContainer/Control" unique_id=936004247]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+mouse_filter = 2
+texture = ExtResource("3_ftxji")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="Root/VBoxContainer/Control/Icon" unique_id=1632272786]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0
+offset_right = 80.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 6
+text = "土豆"
+
+[node name="Type" type="Label" parent="Root/VBoxContainer/Control/Icon" unique_id=1655519635]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0
+offset_top = 9.0
+offset_right = 80.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 6
+text = "农作物"
+
+[node name="Price" type="Label" parent="Root/VBoxContainer/Control/Icon" unique_id=152579131]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0
+offset_top = 18.0
+offset_right = 80.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.18431373, 0.52156866, 0.8039216, 1)
+theme_override_font_sizes/font_size = 6
+text = "价格：5"
+
+[node name="Description" type="Label" parent="Root/VBoxContainer" unique_id=698219076]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 6
+text = "这是一个土豆"
+autowrap_mode = 1

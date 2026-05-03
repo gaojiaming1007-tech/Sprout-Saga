@@ -1,15 +1,39 @@
 [gd_scene format=3 uid="uid://clljuhyrto2cy"]
 
 [ext_resource type="Script" uid="uid://lxdh4sosc2j0" path="res://scenes/game/game.gd" id="1_sul5r"]
+[ext_resource type="Resource" uid="uid://cm3rs8d8nten1" path="res://resources/game_resource.tres" id="2_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://g61pvceycxkt" path="res://compoents/camers/camera.tscn" id="2_7h61r"]
 [ext_resource type="PackedScene" uid="uid://ddwyrm8iob8od" path="res://compoents/character/character.tscn" id="3_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://dyg3hyhrxut6j" path="res://compoents/inventory_info_popup/inventory_info_popup.tscn" id="4_kelw5"]
+[ext_resource type="PackedScene" uid="uid://3io7aswj4guk" path="res://compoents/time_recorder/time_record.tscn" id="5_lfrn8"]
+[ext_resource type="PackedScene" uid="uid://tjcfusoawdv8" path="res://compoents/global_light/global_light.tscn" id="7_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://d0flb6fup3mb6" path="res://compoents/mouse_focus/mouse_focus.tscn" id="8_87uf6"]
+[ext_resource type="PackedScene" uid="uid://b6ehfsx5co6u8" path="res://compoents/range_prompt/range_prompt.tscn" id="9_2a8rs"]
 
-[node name="Game" type="Node2D" unique_id=702652417 node_paths=PackedStringArray("camera", "character")]
+[node name="Game" type="Node2D" unique_id=1182168465 node_paths=PackedStringArray("camera", "character", "inventory_info_popup", "time_record", "global_light", "mouse_focus", "range_prompt")]
+z_as_relative = false
+y_sort_enabled = true
 script = ExtResource("1_sul5r")
 camera = NodePath("Camera")
 character = NodePath("Character")
+inventory_info_popup = NodePath("InventoryInfoPopop")
+time_record = NodePath("TimeRecord")
+game_resource = ExtResource("2_5i0tg")
+global_light = NodePath("GlobalLight")
+mouse_focus = NodePath("MouseFocus")
+range_prompt = NodePath("RangePrompt")
 metadata/_custom_type_script = "uid://lxdh4sosc2j0"
 
-[node name="Camera" parent="." unique_id=297410049 instance=ExtResource("2_7h61r")]
+[node name="Character" parent="." unique_id=2724270 instance=ExtResource("3_0sr1o")]
 
-[node name="Character" parent="." unique_id=1688369041 instance=ExtResource("3_0sr1o")]
+[node name="Camera" parent="." unique_id=1773169592 instance=ExtResource("2_7h61r")]
+
+[node name="InventoryInfoPopop" parent="." unique_id=1369004803 instance=ExtResource("4_kelw5")]
+
+[node name="TimeRecord" parent="." unique_id=816497842 instance=ExtResource("5_lfrn8")]
+
+[node name="GlobalLight" parent="." unique_id=58233484 instance=ExtResource("7_bdhmt")]
+
+[node name="MouseFocus" parent="." unique_id=1824334482 instance=ExtResource("8_87uf6")]
+
+[node name="RangePrompt" parent="." unique_id=1331660825 instance=ExtResource("9_2a8rs")]

@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="HoldResource" format=3]
+
+[ext_resource type="Script" path="res://structs/hold_resource.gd" id="1_7lbtv"]
+[ext_resource type="Resource" path="res://resources/inventory/weapon/hoe.tres" id="1_o4ve0"]
+[ext_resource type="Resource" path="res://resources/inventory/weapon/sickle.tres" id="2_4ddx5"]
+[ext_resource type="Resource" path="res://resources/inventory/tool/sprinkler.tres" id="3_4ddx5"]
+[ext_resource type="Resource" path="res://resources/inventory/seed/carrot_seed.tres" id="3_vdryg"]
+[ext_resource type="Resource" path="res://resources/inventory/weapon/axe.tres" id="5_66fk1"]
+[ext_resource type="Resource" path="res://resources/inventory/crop/photo.tres" id="5_latbv"]
+[ext_resource type="Resource" path="res://resources/inventory/tool/fishing_rod.tres" id="6_wrmq7"]
+
+[resource]
+script = ExtResource("1_7lbtv")
+hold_inventory = Array[Dictionary]([{
+"count": 1,
+"inventory": ExtResource("1_o4ve0")
+}, {
+"count": 1,
+"inventory": ExtResource("2_4ddx5")
+}, {
+"count": 21,
+"inventory": ExtResource("3_vdryg")
+}, {
+"count": 1,
+"inventory": ExtResource("3_4ddx5")
+}, {
+"count": 1,
+"inventory": ExtResource("5_66fk1")
+}, {
+"count": 1,
+"inventory": ExtResource("6_wrmq7")
+}, {
+"count": 29,
+"inventory": ExtResource("5_latbv")
+}, {}, {}])
+metadata/_custom_type_script = "uid://2ex3xb8r244s"

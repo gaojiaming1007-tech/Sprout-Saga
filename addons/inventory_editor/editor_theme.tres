@@ -1,0 +1,40 @@
+[gd_resource type="Theme" format=3 uid="uid://djtbrsl3apmot"]
+
+[ext_resource type="Texture2D" uid="uid://oy8kuqhdo1nl" path="res://addons/inventory_editor/button_normal.atlastex" id="1_qgmg4"]
+[ext_resource type="Texture2D" uid="uid://b682im33swhvx" path="res://addons/inventory_editor/button_pressed.atlastex" id="1_surmj"]
+[ext_resource type="Texture2D" uid="uid://cpqs5vn0qnxnp" path="res://addons/inventory_editor/button_hover.atlastex" id="2_ubk3i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_871s8"]
+texture = ExtResource("1_surmj")
+texture_margin_left = 3.0
+texture_margin_top = 4.0
+texture_margin_right = 3.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ghf7"]
+texture = ExtResource("2_ubk3i")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mt6dt"]
+texture = ExtResource("1_qgmg4")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_07183"]
+texture = ExtResource("1_surmj")
+texture_margin_left = 3.0
+texture_margin_top = 4.0
+texture_margin_right = 3.0
+texture_margin_bottom = 4.0
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxTexture_871s8")
+Button/styles/hover = SubResource("StyleBoxTexture_4ghf7")
+Button/styles/normal = SubResource("StyleBoxTexture_mt6dt")
+Button/styles/pressed = SubResource("StyleBoxTexture_07183")

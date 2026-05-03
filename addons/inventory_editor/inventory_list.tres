@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="InventoryList" format=3 uid="uid://duedcg80warjo"]
+
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_v2lgk"]
+[ext_resource type="Resource" uid="uid://58w1k00yi34u" path="res://resources/inventory/tool/fishing_rod.tres" id="2_6nlpj"]
+[ext_resource type="Resource" uid="uid://bs2117wh4v5b5" path="res://resources/inventory/seed/carrot_seed.tres" id="2_63pug"]
+[ext_resource type="Resource" uid="uid://fys2lryy6hf" path="res://resources/inventory/crop/carrot.tres" id="2_l56s5"]
+[ext_resource type="Resource" uid="uid://bhwmupipn8j23" path="res://resources/inventory/weapon/hoe.tres" id="2_ld81b"]
+[ext_resource type="Resource" uid="uid://ciw2b6uwyhsjj" path="res://resources/inventory/crop/photo.tres" id="2_mvavr"]
+[ext_resource type="Resource" uid="uid://bwiam10retnt4" path="res://resources/inventory/seed/photo_seed.tres" id="2_pp8yy"]
+[ext_resource type="Resource" uid="uid://dnmx12r4p6cef" path="res://resources/inventory/tool/sprinkler.tres" id="2_q3f5e"]
+[ext_resource type="Script" uid="uid://cykjynbdcchxu" path="res://addons/inventory_editor/inventort_list.gd" id="2_tw14y"]
+[ext_resource type="Resource" uid="uid://c0nir6ffa0vv6" path="res://resources/inventory/material/wood.tres" id="2_x1ytl"]
+[ext_resource type="Resource" uid="uid://pqa5hdrmisrn" path="res://resources/inventory/weapon/axe.tres" id="2_xijvo"]
+[ext_resource type="Resource" uid="uid://dcl7ltigjr7jf" path="res://resources/inventory/weapon/sickle.tres" id="2_yqeyr"]
+
+[resource]
+script = ExtResource("2_tw14y")
+list = Array[ExtResource("1_v2lgk")]([ExtResource("2_6nlpj"), ExtResource("2_xijvo"), ExtResource("2_x1ytl"), ExtResource("2_yqeyr"), ExtResource("2_q3f5e"), ExtResource("2_l56s5"), ExtResource("2_63pug"), ExtResource("2_pp8yy"), ExtResource("2_mvavr"), ExtResource("2_ld81b")])
+metadata/_custom_type_script = "uid://cykjynbdcchxu"

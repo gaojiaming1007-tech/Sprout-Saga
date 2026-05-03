@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bdf3cea24uqyt"]
+
+[ext_resource type="Script" uid="uid://dunnkt020wm52" path="res://compoents/character/children/attribute/children/hold/hold.gd" id="1_0xqvi"]
+[ext_resource type="Texture2D" uid="uid://bdriocnjh7vr8" path="res://used/ui/hold_panel.atlastex" id="2_uyuru"]
+[ext_resource type="PackedScene" uid="uid://2jv51ak673ft" path="res://compoents/character/children/attribute/children/hold/children/hold_item/hold_item.tscn" id="3_h52tr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0xqvi"]
+texture = ExtResource("2_uyuru")
+texture_margin_left = 6.0
+texture_margin_top = 7.0
+texture_margin_right = 6.0
+texture_margin_bottom = 5.0
+
+[node name="Hold" type="Control" unique_id=2037234211]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -35.0
+offset_right = -95.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_0xqvi")
+metadata/_custom_type_script = "uid://dunnkt020wm52"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1107615022]
+layout_mode = 0
+offset_right = 174.0
+offset_bottom = 30.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0xqvi")
+
+[node name="ListContainer" type="GridContainer" parent="PanelContainer" unique_id=1437133536]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 9
+
+[node name="0" parent="PanelContainer/ListContainer" unique_id=905231380 instance=ExtResource("3_h52tr")]
+layout_mode = 2
+
+[node name="1" parent="PanelContainer/ListContainer" unique_id=1429995747 instance=ExtResource("3_h52tr")]
+layout_mode = 2
+
+[node name="2" parent="PanelContainer/ListContainer" unique_id=1620509246 instance=ExtResource("3_h52tr")]
+layout_mode = 2
+
+[node name="3" parent="PanelContainer/ListContainer" unique_id=1637278747 instance=ExtResource("3_h52tr")]
+layout_mode = 2
+
+[node name="4" parent="PanelContainer/ListContainer" unique_id=476801783 instance=ExtResource("3_h52tr")]
+layout_mode = 2
+
+[node name="5" parent="PanelContainer/ListContainer" unique_id=1069801141 instance=ExtResource("3_h52tr")]
+layout_mode = 2
+
+[node name="6" parent="PanelContainer/ListContainer" unique_id=330071740 instance=ExtResource("3_h52tr")]
+layout_mode = 2
+
+[node name="7" parent="PanelContainer/ListContainer" unique_id=29870332 instance=ExtResource("3_h52tr")]
+layout_mode = 2
+
+[node name="8" parent="PanelContainer/ListContainer" unique_id=1969468895 instance=ExtResource("3_h52tr")]
+layout_mode = 2

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dyx0ejh5xf8xc"]
+
+[ext_resource type="Script" uid="uid://6vih6ol6pseu" path="res://compoents/pickable/pickable.gd" id="1_221nb"]
+[ext_resource type="Texture2D" uid="uid://s5e0urytao67" path="res://used/inventory/photo.atlastex" id="2_s425s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51vwu"]
+
+[node name="Pickable" type="Area2D" unique_id=2142327414 node_paths=PackedStringArray("sprite")]
+z_index = 300
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_221nb")
+sprite = NodePath("CollisionShape2D/Sprite2D")
+metadata/_custom_type_script = "uid://6vih6ol6pseu"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1801464040]
+shape = SubResource("RectangleShape2D_51vwu")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=778123408]
+texture = ExtResource("2_s425s")
+
+[connection signal="body_entered" from="." to="." method="_on_character_entered"]
+[connection signal="body_exited" from="." to="." method="_on_character_exited"]

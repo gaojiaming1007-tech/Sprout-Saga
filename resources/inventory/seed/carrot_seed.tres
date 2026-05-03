@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://bs2117wh4v5b5"]
+
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_c67wu"]
+[ext_resource type="Texture2D" uid="uid://75e0bcjltf01" path="res://used/inventory/carrot_seed_highlight.atlastex" id="1_n0e4t"]
+[ext_resource type="Texture2D" uid="uid://bvcfi37421uxh" path="res://used/inventory/carrot_seed.atlastex" id="2_54rkv"]
+
+[resource]
+script = ExtResource("1_c67wu")
+id = 3001
+texture = ExtResource("2_54rkv")
+highlight_texture = ExtResource("1_n0e4t")
+name = "胡萝卜种子"
+description = "可以种出脆甜的胡萝卜"
+type = 3
+price = 1
+stack = true
+lift = true

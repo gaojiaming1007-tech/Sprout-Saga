@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://pqa5hdrmisrn"]
+
+[ext_resource type="Texture2D" uid="uid://c7kjwdj8kwcgb" path="res://used/inventory/axe_highlight.atlastex" id="1_j7xok"]
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_oqphl"]
+[ext_resource type="Texture2D" uid="uid://byr331u1v6kao" path="res://used/inventory/axe.atlastex" id="2_5oli0"]
+
+[resource]
+script = ExtResource("1_oqphl")
+id = 2
+texture = ExtResource("2_5oli0")
+highlight_texture = ExtResource("1_j7xok")
+name = "斧头"
+description = "砍树的工具"
+price = 10

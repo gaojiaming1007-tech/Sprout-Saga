@@ -1,0 +1,178 @@
+[gd_resource type="Resource" script_class="FarmlandExistResource" format=3]
+
+[ext_resource type="Resource" path="res://resources/inventory/seed/photo_seed.tres" id="1_4vmk0"]
+[ext_resource type="Script" path="res://structs/farmland_exist_resource.gd" id="1_aw6kd"]
+[ext_resource type="Resource" path="res://resources/inventory/seed/carrot_seed.tres" id="2_r7yew"]
+
+[resource]
+script = ExtResource("1_aw6kd")
+lands = Array[Dictionary]([{
+"cell": Vector2i(1, -3),
+"growth_time": 70660,
+"inventory": ExtResource("1_4vmk0"),
+"moisture": 0,
+"position": Vector2i(16, -48)
+}, {
+"cell": Vector2i(1, -2),
+"growth_time": 70652,
+"inventory": ExtResource("1_4vmk0"),
+"moisture": 0,
+"position": Vector2i(16, -32)
+}, {
+"cell": Vector2i(2, -2),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(32, -32)
+}, {
+"cell": Vector2i(2, -3),
+"growth_time": 70657,
+"inventory": ExtResource("1_4vmk0"),
+"moisture": 0,
+"position": Vector2i(32, -48)
+}, {
+"cell": Vector2i(0, -2),
+"growth_time": 70587,
+"inventory": ExtResource("1_4vmk0"),
+"moisture": 0,
+"position": Vector2i(0, -32)
+}, {
+"cell": Vector2i(-1, -3),
+"growth_time": 70550,
+"inventory": ExtResource("1_4vmk0"),
+"moisture": 0,
+"position": Vector2i(-16, -48)
+}, {
+"cell": Vector2i(-1, -2),
+"growth_time": 69378,
+"inventory": ExtResource("1_4vmk0"),
+"moisture": 0,
+"position": Vector2i(-16, -32)
+}, {
+"cell": Vector2i(0, -3),
+"growth_time": 70548,
+"inventory": ExtResource("1_4vmk0"),
+"moisture": 0,
+"position": Vector2i(0, -48)
+}, {
+"cell": Vector2i(-2, -2),
+"growth_time": 69322,
+"inventory": ExtResource("2_r7yew"),
+"moisture": 0,
+"position": Vector2i(-32, -32)
+}, {
+"cell": Vector2i(-2, -3),
+"growth_time": 69340,
+"inventory": ExtResource("2_r7yew"),
+"moisture": 0,
+"position": Vector2i(-32, -48)
+}, {
+"cell": Vector2i(-1, -1),
+"growth_time": 70490,
+"inventory": ExtResource("1_4vmk0"),
+"moisture": 0,
+"position": Vector2i(-16, -16)
+}, {
+"cell": Vector2i(-2, -1),
+"growth_time": 70471,
+"inventory": ExtResource("1_4vmk0"),
+"moisture": 0,
+"position": Vector2i(-32, -16)
+}, {
+"cell": Vector2i(-3, -1),
+"growth_time": 69321,
+"inventory": ExtResource("2_r7yew"),
+"moisture": 0,
+"position": Vector2i(-48, -16)
+}, {
+"cell": Vector2i(-3, -2),
+"growth_time": 69323,
+"inventory": ExtResource("2_r7yew"),
+"moisture": 0,
+"position": Vector2i(-48, -32)
+}, {
+"cell": Vector2i(-3, -3),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(-48, -48)
+}, {
+"cell": Vector2i(0, -1),
+"growth_time": 67742,
+"inventory": ExtResource("2_r7yew"),
+"moisture": 0,
+"position": Vector2i(0, -16)
+}, {
+"cell": Vector2i(-2, 2),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(-32, 32)
+}, {
+"cell": Vector2i(1, -4),
+"growth_time": 67772,
+"inventory": ExtResource("2_r7yew"),
+"moisture": 0,
+"position": Vector2i(16, -64)
+}, {
+"cell": Vector2i(1, -5),
+"growth_time": 67774,
+"inventory": ExtResource("2_r7yew"),
+"moisture": 0,
+"position": Vector2i(16, -80)
+}, {
+"cell": Vector2i(2, -5),
+"growth_time": 69140,
+"inventory": ExtResource("2_r7yew"),
+"moisture": 0,
+"position": Vector2i(32, -80)
+}, {
+"cell": Vector2i(2, -4),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(32, -64)
+}, {
+"cell": Vector2i(1, -1),
+"growth_time": 67741,
+"inventory": ExtResource("2_r7yew"),
+"moisture": 0,
+"position": Vector2i(16, -16)
+}, {
+"cell": Vector2i(2, -1),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(32, -16)
+}, {
+"cell": Vector2i(2, 0),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(32, 0)
+}, {
+"cell": Vector2i(1, 0),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(16, 0)
+}, {
+"cell": Vector2i(0, 0),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(0, 0)
+}, {
+"cell": Vector2i(7, -1),
+"growth_time": 66264,
+"inventory": ExtResource("2_r7yew"),
+"moisture": 0,
+"position": Vector2i(112, -16)
+}, {
+"cell": Vector2i(7, 0),
+"growth_time": 66261,
+"inventory": ExtResource("2_r7yew"),
+"moisture": 0,
+"position": Vector2i(112, 0)
+}])
+metadata/_custom_type_script = "uid://ckxjp8w0qd6yy"

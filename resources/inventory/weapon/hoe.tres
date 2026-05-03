@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://bhwmupipn8j23"]
+
+[ext_resource type="Texture2D" uid="uid://0ltdta0kf5au" path="res://used/inventory/hoe_hightlight.atlastex" id="1_ljdvq"]
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_yph6g"]
+[ext_resource type="Texture2D" uid="uid://c1jkxehy5ojor" path="res://used/inventory/hoe.atlastex" id="3_vrmgq"]
+
+[resource]
+script = ExtResource("1_yph6g")
+texture = ExtResource("3_vrmgq")
+highlight_texture = ExtResource("1_ljdvq")
+name = "锄头"
+description = "用来耕地的工具"
+price = 10
+metadata/_custom_type_script = "uid://lh5lwvpng4qt"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://fys2lryy6hf"]
+
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_5m775"]
+[ext_resource type="Texture2D" uid="uid://c4cos3h1g0k36" path="res://used/inventory/carrot_highlight.atlastex" id="1_u0cai"]
+[ext_resource type="Texture2D" uid="uid://ctodsvfop2vbx" path="res://used/inventory/carrot.atlastex" id="2_g1q03"]
+
+[resource]
+script = ExtResource("1_5m775")
+id = 7001
+texture = ExtResource("2_g1q03")
+highlight_texture = ExtResource("1_u0cai")
+name = "胡萝卜"
+description = "好吃的胡萝卜"
+type = 4
+price = 5
+stack = true

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://tjcfusoawdv8"]
+
+[ext_resource type="Script" uid="uid://5xx28uam25gs" path="res://compoents/global_light/global_light.gd" id="1_1llnw"]
+[ext_resource type="Curve" uid="uid://pq8qxip6aqf3" path="res://compoents/global_light/light_energy_curve.tres" id="2_nbaej"]
+
+[sub_resource type="Gradient" id="Gradient_1llnw"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nbaej"]
+gradient = SubResource("Gradient_1llnw")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="GlobalLight" type="Node2D" unique_id=58233484 node_paths=PackedStringArray("light")]
+script = ExtResource("1_1llnw")
+light = NodePath("Light")
+curve = ExtResource("2_nbaej")
+metadata/_custom_type_script = "uid://5xx28uam25gs"
+
+[node name="Light" type="PointLight2D" parent="." unique_id=893708317]
+energy = 0.0
+blend_mode = 1
+texture = SubResource("GradientTexture2D_nbaej")
+texture_scale = 20.0

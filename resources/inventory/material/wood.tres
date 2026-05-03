@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://c0nir6ffa0vv6"]
+
+[ext_resource type="Texture2D" uid="uid://b281wgd33225r" path="res://used/inventory/wood_highlight.atlastex" id="1_1jb02"]
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_42ccp"]
+[ext_resource type="Texture2D" uid="uid://byccl8pq4x6go" path="res://used/inventory/wood.atlastex" id="2_xs1l0"]
+
+[resource]
+script = ExtResource("1_42ccp")
+id = 2000
+texture = ExtResource("2_xs1l0")
+highlight_texture = ExtResource("1_1jb02")
+name = "木头"
+description = "用来合成的材料"
+type = 2
+price = 5
+stack = true

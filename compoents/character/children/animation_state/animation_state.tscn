@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bdmnqq607bake"]
+
+[ext_resource type="Script" uid="uid://dpqjni5s1hgs1" path="res://compoents/character/children/animation_state/animation_state.gd" id="1_3lcar"]
+
+[node name="AnimationState" type="Node2D" unique_id=875492941]
+script = ExtResource("1_3lcar")
+metadata/_custom_type_script = "uid://dpqjni5s1hgs1"

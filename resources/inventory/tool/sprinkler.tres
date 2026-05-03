@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://dnmx12r4p6cef"]
+
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_45ffx"]
+[ext_resource type="Texture2D" uid="uid://dotr77k7dfuqp" path="res://used/inventory/sprinkler_highlight.atlastex" id="1_jpo71"]
+[ext_resource type="Texture2D" uid="uid://bbvwkg2rveobb" path="res://used/inventory/sprinkler.atlastex" id="2_1wjd6"]
+
+[resource]
+script = ExtResource("1_45ffx")
+id = 6000
+texture = ExtResource("2_1wjd6")
+highlight_texture = ExtResource("1_jpo71")
+name = "水壶"
+description = "浇水必备"
+type = 6
+price = 20

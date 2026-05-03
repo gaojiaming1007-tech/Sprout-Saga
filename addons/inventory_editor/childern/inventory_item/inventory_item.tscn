@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://vt4bmulfsx3k"]
+
+[ext_resource type="Theme" uid="uid://djtbrsl3apmot" path="res://addons/inventory_editor/editor_theme.tres" id="1_86sqf"]
+[ext_resource type="Script" uid="uid://jv7d4pb4cmap" path="res://addons/inventory_editor/childern/inventory_item/inventory_item.gd" id="1_m2m1r"]
+[ext_resource type="Texture2D" uid="uid://b7tecf56ilbq8" path="res://addons/inventory_editor/icon.atlastex" id="2_0yg7a"]
+
+[node name="InventoryItem" type="Control" unique_id=877399197]
+custom_minimum_size = Vector2(170, 40)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 170.0
+offset_bottom = 40.0
+theme = ExtResource("1_86sqf")
+script = ExtResource("1_m2m1r")
+metadata/_custom_type_script = "uid://jv7d4pb4cmap"
+
+[node name="Button" type="Button" parent="." unique_id=852640304]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "测试"
+icon = ExtResource("2_0yg7a")
+expand_icon = true
