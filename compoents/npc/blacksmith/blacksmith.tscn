@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bu7jq6k6fjc4i"]
+
+[ext_resource type="PackedScene" uid="uid://bbpjw6dwxmwb1" path="res://compoents/npc/npc.tscn" id="1_ts0nb"]
+[ext_resource type="Script" uid="uid://c1dtqq2331fho" path="res://compoents/npc/blacksmith/blacksmith.gd" id="2_o24js"]
+[ext_resource type="SpriteFrames" uid="uid://dvypcbfdbote8" path="res://compoents/npc/blacksmith/spriteframes.tres" id="3_37hc4"]
+[ext_resource type="Resource" path="res://resources/schedule/blacksmith/blacksmith_schedule_list_resource.tres" id="3_kva7p"]
+[ext_resource type="BehaviorTree" uid="uid://dh4nc6te12iry" path="res://ai/trees/blacksmith.tres" id="4_2xxxc"]
+
+[node name="Blacksmith" unique_id=1786249641 instance=ExtResource("1_ts0nb")]
+script = ExtResource("2_o24js")
+schedule_list_resource = ExtResource("3_kva7p")
+
+[node name="AnimatedSprite2D" parent="Graphics" parent_id_path=PackedInt32Array(254521502) index="0" unique_id=361645]
+sprite_frames = ExtResource("3_37hc4")
+animation = &"idle_backward"
+
+[node name="BTPlayer" parent="." index="3" unique_id=1464236225]
+behavior_tree = ExtResource("4_2xxxc")

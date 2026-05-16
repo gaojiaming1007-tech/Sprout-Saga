@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
     update_content()
 
 func update_visible():
-    if character.current_action_state == Character.ActionState.OneShot:
+    if character.current_action_state == Character.ActionState.OneShot || UtilsManager.is_roll_energy:
         visible = false
         current_keyboard_type = KeyboardType.None
         return

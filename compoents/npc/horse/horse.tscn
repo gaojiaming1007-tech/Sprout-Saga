@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://6871pyhx2h77"]
+
+[ext_resource type="PackedScene" uid="uid://bbpjw6dwxmwb1" path="res://compoents/npc/npc.tscn" id="1_bg387"]
+[ext_resource type="Script" uid="uid://g7jd86w74vsn" path="res://compoents/npc/horse/horse.gd" id="2_4seeq"]
+[ext_resource type="SpriteFrames" uid="uid://bhxxlxk6nliex" path="res://compoents/npc/horse/sprite_frames.tres" id="3_dmbyt"]
+[ext_resource type="BehaviorTree" uid="uid://bb4u7wicprm0i" path="res://ai/trees/horse.tres" id="4_u0kpi"]
+[ext_resource type="Texture2D" uid="uid://biralhlgftcy7" path="res://used/keyboard/e.atlastex" id="4_x6r7j"]
+
+[node name="Horse" unique_id=1786249641 instance=ExtResource("1_bg387")]
+script = ExtResource("2_4seeq")
+
+[node name="AnimatedSprite2D" parent="Graphics" parent_id_path=PackedInt32Array(254521502) index="0" unique_id=361645]
+position = Vector2(0, -13)
+sprite_frames = ExtResource("3_dmbyt")
+animation = &"idle_parallel"
+
+[node name="Icon" parent="Interact/Root" parent_id_path=PackedInt32Array(1845337610) index="0" unique_id=1317451519]
+texture = ExtResource("4_x6r7j")
+
+[node name="Text" parent="Interact/Root" parent_id_path=PackedInt32Array(1845337610) index="1" unique_id=165975603]
+text = "骑马"
+
+[node name="BTPlayer" parent="." index="3" unique_id=1464236225]
+behavior_tree = ExtResource("4_u0kpi")

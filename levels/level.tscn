@@ -2,12 +2,15 @@
 
 [ext_resource type="TileSet" uid="uid://5uj2vbmuglp8" path="res://used/tileset/soil/soil.tres" id="1_80vhd"]
 [ext_resource type="Script" uid="uid://j40ewyxymvk1" path="res://levels/level.gd" id="1_hjsbj"]
+[ext_resource type="TileSet" uid="uid://d0iltoyme23ak" path="res://used/tileset/building/building.tres" id="3_cwqvt"]
 
-[node name="Level" type="Node2D" unique_id=1560341630 node_paths=PackedStringArray("farmland_layer")]
+[node name="Level" type="Node2D" unique_id=1560341630 node_paths=PackedStringArray("farmland_layer", "building_layer")]
 z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_hjsbj")
 farmland_layer = NodePath("TileMapLayerContianer/Farmland")
+level_location = null
+building_layer = NodePath("TileMapLayerContianer/Building")
 metadata/_custom_type_script = "uid://j40ewyxymvk1"
 
 [node name="TileMapLayerContianer" type="Node2D" parent="." unique_id=1100584436]
@@ -16,6 +19,10 @@ z_as_relative = false
 
 [node name="Farmland" type="TileMapLayer" parent="TileMapLayerContianer" unique_id=94776452]
 tile_set = ExtResource("1_80vhd")
+metadata/bound_exclude = true
+
+[node name="Building" type="TileMapLayer" parent="TileMapLayerContianer" unique_id=621872600]
+tile_set = ExtResource("3_cwqvt")
 metadata/bound_exclude = true
 
 [node name="OriginPoint" type="Marker2D" parent="." unique_id=1132894200]

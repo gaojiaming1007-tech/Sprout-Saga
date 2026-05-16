@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dyn6qccficex3"]
+
+[ext_resource type="Script" uid="uid://dtdy2tgeckm4k" path="res://managers/utils_manager/children/shop/shop.gd" id="1_nwc4s"]
+[ext_resource type="Texture2D" uid="uid://bdriocnjh7vr8" path="res://used/ui/hold_panel.atlastex" id="2_qq1l1"]
+[ext_resource type="Texture2D" uid="uid://benv0w8w2hox3" path="res://used/ui/undone.atlastex" id="3_5ch8e"]
+[ext_resource type="Texture2D" uid="uid://cu6w2d3ssf0ah" path="res://used/ui/undone_focus.atlastex" id="4_i5f3i"]
+[ext_resource type="PackedScene" uid="uid://btio24iionn3m" path="res://managers/utils_manager/children/shop/children/selling_area/selling_area.tscn" id="6_a13sc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gcldb"]
+texture = ExtResource("2_qq1l1")
+texture_margin_left = 6.0
+texture_margin_top = 7.0
+texture_margin_right = 6.0
+texture_margin_bottom = 5.0
+
+[node name="Shop" type="CanvasLayer" unique_id=546178014 node_paths=PackedStringArray("root")]
+layer = 6
+script = ExtResource("1_nwc4s")
+root = NodePath("Root")
+metadata/_custom_type_script = "uid://dtdy2tgeckm4k"
+
+[node name="Root" type="PanelContainer" parent="." unique_id=76885911]
+offset_right = 30.0
+offset_bottom = 30.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_gcldb")
+
+[node name="Control" type="Control" parent="Root" unique_id=39578287]
+layout_mode = 2
+
+[node name="Close" type="TextureButton" parent="Root/Control" unique_id=652101328]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = -15.0
+offset_right = 16.0
+offset_bottom = 1.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_5ch8e")
+texture_pressed = ExtResource("4_i5f3i")
+texture_hover = ExtResource("3_5ch8e")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root" unique_id=98970541]
+layout_mode = 2
+
+[node name="List" type="GridContainer" parent="Root/VBoxContainer" unique_id=2081753823]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 5
+
+[node name="SellingArea" parent="Root/VBoxContainer" unique_id=1882394845 instance=ExtResource("6_a13sc")]
+layout_mode = 2
+
+[connection signal="pressed" from="Root/Control/Close" to="." method="_on_close_pressed"]

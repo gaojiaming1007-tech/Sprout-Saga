@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TaskListResource" format=3 uid="uid://c4si5q1kw5i78"]
+
+[ext_resource type="Script" uid="uid://cu2w4ra5snjym" path="res://structs/task_resource.gd" id="1_0ce31"]
+[ext_resource type="Script" uid="uid://ce3b802y7jlc4" path="res://structs/task_list_resource.gd" id="1_x05s3"]
+[ext_resource type="Resource" uid="uid://bdhkdmc46uqyu" path="res://resources/task/1.tres" id="2_j2i44"]
+
+[resource]
+script = ExtResource("1_x05s3")
+list = Array[ExtResource("1_0ce31")]([ExtResource("2_j2i44")])
+metadata/_custom_type_script = "uid://ce3b802y7jlc4"

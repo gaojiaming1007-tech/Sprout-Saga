@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="TaskResource" format=3 uid="uid://bdhkdmc46uqyu"]
+
+[ext_resource type="Script" uid="uid://cwfbsh8yevlw8" path="res://structs/collect_task_detail_resource.gd" id="1_3h46q"]
+[ext_resource type="Script" uid="uid://cu2w4ra5snjym" path="res://structs/task_resource.gd" id="1_tccq1"]
+[ext_resource type="Resource" uid="uid://pqa5hdrmisrn" path="res://resources/inventory/weapon/axe.tres" id="2_j8usm"]
+[ext_resource type="Resource" uid="uid://dnmx12r4p6cef" path="res://resources/inventory/tool/sprinkler.tres" id="3_j8usm"]
+
+[sub_resource type="Resource" id="Resource_ea2q6"]
+script = ExtResource("1_3h46q")
+list = Array[Dictionary]([{
+"count": 1,
+"has": 1,
+"inventory": ExtResource("2_j8usm")
+}])
+metadata/_custom_type_script = "uid://cwfbsh8yevlw8"
+
+[resource]
+script = ExtResource("1_tccq1")
+id = 1
+summary = "购买斧头"
+describe = "我需要一个斧头用来维护船只"
+done = true
+detail = SubResource("Resource_ea2q6")
+reward = Array[Dictionary]([{
+"count": 1,
+"inventory": ExtResource("3_j8usm")
+}])
+metadata/_custom_type_script = "uid://cu2w4ra5snjym"

@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="LevelResource" format=3]
+[gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://c8bc60gam6gnk"]
 
-[ext_resource type="Script" path="res://structs/level_resource.gd" id="1_27dpb"]
-[ext_resource type="Resource" path="res://resources/birth/birth_farmland_exist_resource.tres" id="1_jhn3k"]
-[ext_resource type="Resource" path="res://resources/birth/birth_fellable_exist_resource.tres" id="2_064e7"]
+[ext_resource type="Script" uid="uid://mbbbqhucdtp5" path="res://structs/level_resource.gd" id="1_27dpb"]
+[ext_resource type="Resource" uid="uid://kl1x7qldojb5" path="res://resources/birth/birth_farmland_exist_resource.tres" id="1_jhn3k"]
+[ext_resource type="Resource" uid="uid://vxufqdyp3qhp" path="res://resources/birth/birth_building_resource.tres" id="1_mh8ra"]
+[ext_resource type="Resource" uid="uid://dt46qaitnxs26" path="res://resources/birth/birth_fellable_exist_resource.tres" id="2_064e7"]
 
 [resource]
 script = ExtResource("1_27dpb")
-last_position = Vector2(183.59499, -24)
+last_position = Vector2(37.170296, -183.66156)
 farmland_exist_esource = ExtResource("1_jhn3k")
 fellable_tree_exist_resource = ExtResource("2_064e7")
+building_resource = ExtResource("1_mh8ra")
 metadata/_custom_type_script = "uid://mbbbqhucdtp5"

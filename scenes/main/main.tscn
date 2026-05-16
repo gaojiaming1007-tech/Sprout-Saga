@@ -1,0 +1,237 @@
+[gd_scene format=3 uid="uid://clj82lqwtgtfy"]
+
+[ext_resource type="Script" uid="uid://ba5viosuiv7j2" path="res://scenes/main/main.gd" id="1_hyk8p"]
+[ext_resource type="Texture2D" uid="uid://cfr7r3cvffyqt" path="res://Assets/User/main.png" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://divaxo447bja8" path="res://scenes/main/children/classify_button/classify_button.tscn" id="2_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://batlcr2jeqwmh" path="res://scenes/main/children/main_button/main_button.tscn" id="4_l3cfh"]
+[ext_resource type="Theme" uid="uid://dol7cvwvgmvoi" path="res://themes/dark.tres" id="5_hujxm"]
+[ext_resource type="Texture2D" uid="uid://bx0yq2cx4pdm" path="res://used/ui/forward_default.atlastex" id="6_yyfjg"]
+[ext_resource type="Texture2D" uid="uid://s3fysa3a5sot" path="res://used/ui/forward_focus.atlastex" id="7_b1x3f"]
+[ext_resource type="AudioStream" uid="uid://b1cprs82cs2d5" path="res://Assets/Sound/Winter.ogg" id="8_yyfjg"]
+
+[node name="Main" type="Node2D" unique_id=509922717 node_paths=PackedStringArray("zones", "existing", "volume_slider")]
+script = ExtResource("1_hyk8p")
+zones = [NodePath("CanvasLayer/Control/Content/Game"), NodePath("CanvasLayer/Control/Content/Explain"), NodePath("CanvasLayer/Control/Content/Setting")]
+existing = NodePath("CanvasLayer/Control/Content/Existing")
+volume_slider = NodePath("CanvasLayer/Control/Content/Setting/HBoxContainer/HSlider")
+metadata/_custom_type_script = "uid://ba5viosuiv7j2"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=330499911]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=798026793]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Classify" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=547076442]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -70.0
+offset_right = -40.0
+offset_bottom = 70.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="0" parent="CanvasLayer/Control/Classify" unique_id=308727089 instance=ExtResource("2_k2fmo")]
+layout_mode = 2
+
+[node name="1" parent="CanvasLayer/Control/Classify" unique_id=563941772 instance=ExtResource("2_k2fmo")]
+layout_mode = 2
+type = 1
+
+[node name="2" parent="CanvasLayer/Control/Classify" unique_id=532807620 instance=ExtResource("2_k2fmo")]
+layout_mode = 2
+type = 2
+
+[node name="3" parent="CanvasLayer/Control/Classify" unique_id=1503547589 instance=ExtResource("2_k2fmo")]
+layout_mode = 2
+type = 3
+
+[node name="Content" type="TextureRect" parent="CanvasLayer/Control" unique_id=980823276]
+custom_minimum_size = Vector2(480, 250)
+layout_mode = 0
+offset_top = 10.0
+offset_right = 480.0
+offset_bottom = 260.0
+mouse_filter = 2
+texture = ExtResource("2_iuonh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Tetle" type="Label" parent="CanvasLayer/Control/Content" unique_id=722773350]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 12.0
+offset_right = 303.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.8784314, 0.41960785, 0.32941177, 1)
+theme_override_colors/font_shadow_color = Color(0.5529412, 0.4509804, 0.40784314, 1)
+theme_override_colors/font_outline_color = Color(0.09411765, 0.09411765, 0.09411765, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 30
+text = "穗光物语"
+
+[node name="Version" type="Label" parent="CanvasLayer/Control/Content" unique_id=284773811]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -36.0
+offset_right = 64.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.32156864, 0.32156864, 0.32156864, 1)
+theme_override_font_sizes/font_size = 8
+text = "Copyright Tsingleton Version 1.0"
+
+[node name="Game" type="Control" parent="CanvasLayer/Control/Content" unique_id=1914493783]
+custom_minimum_size = Vector2(76, 62)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -31.0
+offset_right = 38.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Content/Game" unique_id=1387790231]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 10
+
+[node name="MainButton" parent="CanvasLayer/Control/Content/Game/VBoxContainer" unique_id=1140839651 instance=ExtResource("4_l3cfh")]
+layout_mode = 2
+
+[node name="MainButton2" parent="CanvasLayer/Control/Content/Game/VBoxContainer" unique_id=19678344 instance=ExtResource("4_l3cfh")]
+layout_mode = 2
+text = "继续旅程"
+
+[node name="Existing" type="Control" parent="CanvasLayer/Control/Content" unique_id=48335290]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -60.0
+offset_right = 40.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_hujxm")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control/Content/Existing" unique_id=802404537]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="List" type="VBoxContainer" parent="CanvasLayer/Control/Content/Existing/ScrollContainer" unique_id=2107892219]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Back" type="TextureButton" parent="CanvasLayer/Control/Content/Existing" unique_id=694550659]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 7.0
+offset_bottom = 8.0
+grow_vertical = 2
+scale = Vector2(-1, 1)
+texture_normal = ExtResource("6_yyfjg")
+texture_pressed = ExtResource("7_b1x3f")
+texture_hover = ExtResource("6_yyfjg")
+texture_focused = ExtResource("6_yyfjg")
+
+[node name="Explain" type="Control" parent="CanvasLayer/Control/Content" unique_id=190813844]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Content/Explain" unique_id=1159699800]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 101.0
+offset_right = 350.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "这是一个清朝老人呕心沥血纯手搓的毕设"
+autowrap_mode = 1
+
+[node name="Setting" type="VBoxContainer" parent="CanvasLayer/Control/Content" unique_id=2020504193]
+custom_minimum_size = Vector2(154, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -20.0
+offset_right = 77.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_hujxm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Content/Setting" unique_id=849097635]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Content/Setting/HBoxContainer" unique_id=1134665448]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "音量："
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Control/Content/Setting/HBoxContainer" unique_id=1165995160]
+custom_minimum_size = Vector2(120, 16)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=244249726]
+stream = ExtResource("8_yyfjg")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/Control/Content/Game/VBoxContainer/MainButton" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Content/Game/VBoxContainer/MainButton2" to="." method="_on_existing_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Content/Existing/Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Control/Content/Setting/HBoxContainer/HSlider" to="." method="_on_volume_changed"]

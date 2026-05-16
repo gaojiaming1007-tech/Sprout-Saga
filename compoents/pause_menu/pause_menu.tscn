@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://63vytnqsyj87"]
+
+[ext_resource type="Script" uid="uid://dsdnsg75iu2tx" path="res://compoents/pause_menu/pause_menu.gd" id="1_6ckmf"]
+[ext_resource type="Texture2D" uid="uid://br2luu1vfcvun" path="res://compoents/pause_menu/pause_panel.atlastex" id="2_fj0ts"]
+[ext_resource type="PackedScene" uid="uid://batlcr2jeqwmh" path="res://scenes/main/children/main_button/main_button.tscn" id="3_6to1j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ulp3i"]
+texture = ExtResource("2_fj0ts")
+texture_margin_left = 80.0
+texture_margin_top = 71.0
+texture_margin_right = 82.0
+texture_margin_bottom = 57.0
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1776227849]
+process_mode = 3
+layer = 40
+script = ExtResource("1_6ckmf")
+metadata/_custom_type_script = "uid://dsdnsg75iu2tx"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=135410392]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.30588236)
+
+[node name="Panel" type="Panel" parent="ColorRect" unique_id=637522633]
+custom_minimum_size = Vector2(240, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -100.0
+offset_right = 120.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ulp3i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Panel" unique_id=1744408078]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -26.0
+offset_right = 38.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainButton" parent="ColorRect/Panel/VBoxContainer" unique_id=1140839651 instance=ExtResource("3_6to1j")]
+layout_mode = 2
+text = "继续游戏"
+
+[node name="MainButton2" parent="ColorRect/Panel/VBoxContainer" unique_id=1170741689 instance=ExtResource("3_6to1j")]
+layout_mode = 2
+text = "返回菜单"
+
+[connection signal="pressed" from="ColorRect/Panel/VBoxContainer/MainButton" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="ColorRect/Panel/VBoxContainer/MainButton2" to="." method="_on_main_pressed"]

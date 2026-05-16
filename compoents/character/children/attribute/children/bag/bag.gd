@@ -6,16 +6,14 @@ var bag_item_list: Array[BagItem] = []
 
 var tween: Tween
 
+@export var panel: PanelContainer
+
 func _enter_tree() -> void:
     for child in %ListContainer.get_children():
         if child is BagItem:
             child.bag = self
             bag_item_list.append(child)
     reset()
-
-func _process(delta):
-    if Input.is_action_just_pressed("bag_switch"):
-        switch()
 
 func switch():
     if tween:

@@ -1,0 +1,72 @@
+[gd_resource type="Theme" format=3 uid="uid://dol7cvwvgmvoi"]
+
+[ext_resource type="Texture2D" uid="uid://ccb3obyul7280" path="res://used/ui/gabber.atlastex" id="1_uvcow"]
+[ext_resource type="Texture2D" uid="uid://cpbc0b6yjov7e" path="res://used/ui/gabber_focus.atlastex" id="2_31u0f"]
+[ext_resource type="Texture2D" uid="uid://b4qlmshe0junx" path="res://used/ui/grabber_slider.atlastex" id="3_uvcow"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqjdd"]
+bg_color = Color(0.7647059, 0.20784314, 0.17254902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3usbu"]
+bg_color = Color(0.7647059, 0.20784314, 0.17254902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wg13w"]
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("3_uvcow")
+texture_margin_left = 2.0
+texture_margin_top = 1.0
+texture_margin_right = 2.0
+texture_margin_bottom = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7bto"]
+bg_color = Color(0.68235296, 0.28627452, 0.14117648, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt5ag"]
+bg_color = Color(0.68235296, 0.28627452, 0.14117648, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvcow"]
+bg_color = Color(0.68235296, 0.28627452, 0.14117648, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8vs6t"]
+content_margin_left = 1.0
+content_margin_right = 1.0
+bg_color = Color(0.37254903, 0.25882354, 0.23529412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+HSlider/constants/center_grabber = 1
+HSlider/icons/grabber = ExtResource("1_uvcow")
+HSlider/icons/grabber_highlight = ExtResource("2_31u0f")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_lqjdd")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_3usbu")
+HSlider/styles/slider = SubResource("StyleBoxTexture_wg13w")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_o7bto")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_lt5ag")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_uvcow")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_8vs6t")

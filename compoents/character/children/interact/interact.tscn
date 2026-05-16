@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://kj6l56mbo3co"]
 
 [ext_resource type="Script" uid="uid://clofwvsw6vs7g" path="res://compoents/character/children/interact/interact.gd" id="1_7mpq8"]
-[ext_resource type="Texture2D" uid="uid://bgl1v2e7wdfob" path="res://used/keyboard/r.atlastex" id="2_7q07y"]
+[ext_resource type="Texture2D" uid="uid://bgl1v2e7wdfob" path="res://used/keyboard/f.atlastex" id="2_7q07y"]
 [ext_resource type="Resource" uid="uid://471p8fnqhoub" path="res://resources/interact_keyboard_resource.tres" id="2_bg8h4"]
 
 [sub_resource type="Animation" id="Animation_7q07y"]
@@ -47,6 +47,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 script = ExtResource("1_7mpq8")
 keybaord_resource = ExtResource("2_bg8h4")
 metadata/_custom_type_script = "uid://clofwvsw6vs7g"
@@ -55,10 +56,12 @@ metadata/_custom_type_script = "uid://clofwvsw6vs7g"
 layout_mode = 0
 offset_right = 36.0
 offset_bottom = 16.0
+mouse_filter = 2
 
 [node name="Icon" type="TextureRect" parent="Root" unique_id=1300716620]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_7q07y")
 
 [node name="Text" type="Label" parent="Root" unique_id=1629556321]

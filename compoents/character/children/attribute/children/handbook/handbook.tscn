@@ -1,0 +1,318 @@
+[gd_scene format=3 uid="uid://03avphlr35g1"]
+
+[ext_resource type="Script" uid="uid://chqu24p2v2tqu" path="res://compoents/character/children/attribute/children/handbook/handbook.gd" id="1_0gfda"]
+[ext_resource type="Resource" uid="uid://duedcg80warjo" path="res://addons/inventory_editor/inventory_list.tres" id="2_lps75"]
+[ext_resource type="Texture2D" uid="uid://bhcj3pc4yptaa" path="res://used/ui/handbook_panel.atlastex" id="2_ovun8"]
+[ext_resource type="Texture2D" uid="uid://c1hafglwdd82q" path="res://used/ui/bookmark_default.atlastex" id="3_3gn6l"]
+[ext_resource type="Texture2D" uid="uid://d0vgqfdnbnd46" path="res://used/ui/bookmark_focus.atlastex" id="4_l8td2"]
+[ext_resource type="Texture2D" uid="uid://bx0yq2cx4pdm" path="res://used/ui/forward_default.atlastex" id="5_hruow"]
+[ext_resource type="Texture2D" uid="uid://s3fysa3a5sot" path="res://used/ui/forward_focus.atlastex" id="6_lps75"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gfda"]
+texture = ExtResource("2_ovun8")
+texture_margin_left = 25.0
+texture_margin_top = 12.0
+texture_margin_right = 25.0
+texture_margin_bottom = 28.0
+
+[node name="Handbook" type="Control" unique_id=765111248]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 30.0
+offset_top = 35.0
+offset_right = 30.0
+offset_bottom = 35.0
+script = ExtResource("1_0gfda")
+inventory_list_resource = ExtResource("2_lps75")
+metadata/_custom_type_script = "uid://chqu24p2v2tqu"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=754947986]
+custom_minimum_size = Vector2(238, 144)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_0gfda")
+
+[node name="Control" type="Control" parent="PanelContainer" unique_id=1501142220]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 1
+
+[node name="HandbookContainer" type="HBoxContainer" parent="PanelContainer/Control" unique_id=1313860054]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = -34.0
+offset_right = 187.0
+offset_bottom = -11.0
+theme_override_constants/separation = 3
+
+[node name="0" type="TextureButton" parent="PanelContainer/Control/HandbookContainer" unique_id=787111832]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_3gn6l")
+texture_pressed = ExtResource("4_l8td2")
+texture_hover = ExtResource("4_l8td2")
+texture_focused = ExtResource("4_l8td2")
+
+[node name="Label" type="Label" parent="PanelContainer/Control/HandbookContainer/0" unique_id=1714311713]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 6
+text = "武
+器"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="1" type="TextureButton" parent="PanelContainer/Control/HandbookContainer" unique_id=313097080]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_3gn6l")
+texture_pressed = ExtResource("4_l8td2")
+texture_hover = ExtResource("4_l8td2")
+texture_focused = ExtResource("4_l8td2")
+
+[node name="Label" type="Label" parent="PanelContainer/Control/HandbookContainer/1" unique_id=963247912]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 6
+text = "防
+具"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="TextureButton" parent="PanelContainer/Control/HandbookContainer" unique_id=341128465]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_3gn6l")
+texture_pressed = ExtResource("4_l8td2")
+texture_hover = ExtResource("4_l8td2")
+texture_focused = ExtResource("4_l8td2")
+
+[node name="Label" type="Label" parent="PanelContainer/Control/HandbookContainer/2" unique_id=1137924854]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 6
+text = "材
+料"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="TextureButton" parent="PanelContainer/Control/HandbookContainer" unique_id=1995941197]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_3gn6l")
+texture_pressed = ExtResource("4_l8td2")
+texture_hover = ExtResource("4_l8td2")
+texture_focused = ExtResource("4_l8td2")
+
+[node name="Label" type="Label" parent="PanelContainer/Control/HandbookContainer/3" unique_id=2103718837]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 6
+text = "种
+子"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="TextureButton" parent="PanelContainer/Control/HandbookContainer" unique_id=1333200730]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_3gn6l")
+texture_pressed = ExtResource("4_l8td2")
+texture_hover = ExtResource("4_l8td2")
+texture_focused = ExtResource("4_l8td2")
+
+[node name="Label" type="Label" parent="PanelContainer/Control/HandbookContainer/4" unique_id=1712525529]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 6
+text = "食
+物"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="5" type="TextureButton" parent="PanelContainer/Control/HandbookContainer" unique_id=1094062612]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_3gn6l")
+texture_pressed = ExtResource("4_l8td2")
+texture_hover = ExtResource("4_l8td2")
+texture_focused = ExtResource("4_l8td2")
+
+[node name="Label" type="Label" parent="PanelContainer/Control/HandbookContainer/5" unique_id=1006190794]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 6
+text = "药
+品"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="6" type="TextureButton" parent="PanelContainer/Control/HandbookContainer" unique_id=2063312671]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_3gn6l")
+texture_pressed = ExtResource("4_l8td2")
+texture_hover = ExtResource("4_l8td2")
+texture_focused = ExtResource("4_l8td2")
+
+[node name="Label" type="Label" parent="PanelContainer/Control/HandbookContainer/6" unique_id=1912682014]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 6
+text = "工
+具"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="7" type="TextureButton" parent="PanelContainer/Control/HandbookContainer" unique_id=1039430307]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_3gn6l")
+texture_pressed = ExtResource("4_l8td2")
+texture_hover = ExtResource("4_l8td2")
+texture_focused = ExtResource("4_l8td2")
+
+[node name="Label" type="Label" parent="PanelContainer/Control/HandbookContainer/7" unique_id=317209182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 6
+text = "果
+实"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="8" type="TextureButton" parent="PanelContainer/Control/HandbookContainer" unique_id=1115948903]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_3gn6l")
+texture_pressed = ExtResource("4_l8td2")
+texture_hover = ExtResource("4_l8td2")
+texture_focused = ExtResource("4_l8td2")
+
+[node name="Label" type="Label" parent="PanelContainer/Control/HandbookContainer/8" unique_id=634247426]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 6
+text = "建
+筑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=40163809]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Left" type="GridContainer" parent="PanelContainer/HBoxContainer" unique_id=3095500]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+columns = 4
+
+[node name="Right" type="GridContainer" parent="PanelContainer/HBoxContainer" unique_id=1151294086]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+columns = 4
+
+[node name="ForwardButton" type="Control" parent="PanelContainer" unique_id=2137822865]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 1
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/ForwardButton" unique_id=1807237243]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -8.0
+offset_right = 56.0
+offset_bottom = 8.0
+mouse_filter = 1
+texture_normal = ExtResource("5_hruow")
+texture_pressed = ExtResource("6_lps75")
+texture_hover = ExtResource("6_lps75")
+texture_focused = ExtResource("6_lps75")
+
+[node name="BackwardButton" type="Control" parent="PanelContainer" unique_id=912722607]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 1
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/BackwardButton" unique_id=613279551]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 16.0
+offset_bottom = 8.0
+grow_vertical = 0
+scale = Vector2(-1, 1)
+pivot_offset = Vector2(-20, 0)
+mouse_filter = 1
+texture_normal = ExtResource("5_hruow")
+texture_pressed = ExtResource("6_lps75")
+texture_hover = ExtResource("6_lps75")
+texture_focused = ExtResource("6_lps75")
+
+[connection signal="pressed" from="PanelContainer/ForwardButton/TextureButton" to="." method="_on_forward_pressed"]
+[connection signal="pressed" from="PanelContainer/BackwardButton/TextureButton" to="." method="_on_backward_pressed"]

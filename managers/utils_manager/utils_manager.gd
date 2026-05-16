@@ -53,3 +53,38 @@ func drop_pickable(inventory: Inventory, count: int, at_position: Vector2):
             drop.count = 1
             drop.global_position = at_position
             GameManager.game.current_level_instance.add_child(drop)
+
+var is_roll_energy: bool = false
+
+func start_roll_energy(callback: Callable, at_parent: Node2D, best_value: float = 1.0):
+    is_roll_energy = true
+    var roll_energy: RollEnergy = ResourceManager.load_resource("res://managers/utils_manager/children/roll_energy/roll_energy.tscn").instantiate()
+    roll_energy.best_value = best_value
+    at_parent.add_child(roll_energy)
+    roll_energy.output.connect(callback)
+    await roll_energy.output
+    roll_energy.queue_free()
+    is_roll_energy = false
+
+var is_shop: bool = false
+
+func start_shop(shop_resource: ShopResource):
+    is_shop = true
+    var shop: Shop = ResourceManager.load_resource("res://managers/utils_manager/children/shop/shop.tscn").instantiate()
+    shop.shop_resource = shop_resource
+    add_child(shop)
+    await shop.finish
+    shop.queue_free()
+    is_shop = false
+
+var is_quantity_selection = false
+
+func start_quantity_selection(min_value: int, max_value: int, value: int, callback: Callable):
+    is_quantity_selection = true
+    var quantity_selection: QuantitySelection = ResourceManager.load_resource("res://managers/utils_manager/children/quantity_selection/quantity_selection.tscn").instantiate()
+    quantity_selection.set_default(min_value, max_value, value)
+    add_child(quantity_selection)
+    quantity_selection.finish.connect(callback)
+    await quantity_selection.finish
+    quantity_selection.queue_free()
+    is_quantity_selection = false

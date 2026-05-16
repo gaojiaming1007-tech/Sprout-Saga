@@ -44,6 +44,7 @@ func to_saw(inventory_node: InventoryNode):
 
     seed_resource = ResourceManager.load_resource("res://resources/seed/%s.tres" % [current["inventory"]["id"]])
     set_sf()
+    GameManager.game.range_prompt.set_shader_texture()
     
 func set_sf():
     if current_step == seed_resource.groth_time_state.size():

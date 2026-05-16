@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://n4b34yl4w4sb"]
+
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_rmrpv"]
+[ext_resource type="Texture2D" uid="uid://dl5tyg4xu06m3" path="res://used/inventory/wood_fence.atlastex" id="2_sxni1"]
+
+[resource]
+script = ExtResource("1_rmrpv")
+id = 8000
+texture = ExtResource("2_sxni1")
+highlight_texture = ExtResource("2_sxni1")
+name = "木头栅栏"
+description = "用来作为农田的一部分"
+type = 8
+price = 5
+stack = true
+lift = true

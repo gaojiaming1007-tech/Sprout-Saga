@@ -1,0 +1,97 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://dh4nc6te12iry"]
+
+[ext_resource type="Script" uid="uid://cewhtxngtuqqp" path="res://ai/tasks/play_direction_animation.gd" id="1_jrvfx"]
+[ext_resource type="Script" uid="uid://cbe6l0cxdjhu8" path="res://ai/tasks/set_interace_visible.gd" id="2_m7jm1"]
+[ext_resource type="Script" uid="uid://ccok17f8faxfa" path="res://ai/tasks/move_to_destionation.gd" id="2_yp2vy"]
+[ext_resource type="Script" uid="uid://itqmy0t1pu0a" path="res://ai/tasks/calculation_range_face_direction.gd" id="3_yp2vy"]
+[ext_resource type="Script" uid="uid://ds38rvj860djs" path="res://ai/tasks/await_input.gd" id="5_yp2vy"]
+[ext_resource type="Script" uid="uid://b7b05vuwim21f" path="res://ai/tasks/start_speaker_dialogue.gd" id="6_j2b13"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_e7e4y"]
+var/move/name = &"move"
+var/move/type = 1
+var/move/value = false
+var/move/hint = 0
+var/move/hint_string = ""
+
+[sub_resource type="BBVariant" id="BBVariant_ffvfg"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_1c4rb"]
+variable = &"move"
+value = SubResource("BBVariant_ffvfg")
+
+[sub_resource type="BTAction" id="BTAction_ba2wy"]
+script = ExtResource("2_m7jm1")
+
+[sub_resource type="BTAction" id="BTAction_2nxei"]
+script = ExtResource("2_yp2vy")
+move_speed = 65.0
+
+[sub_resource type="BTSequence" id="BTSequence_82m0e"]
+custom_name = "寻路"
+children = [SubResource("BTCheckVar_1c4rb"), SubResource("BTAction_ba2wy"), SubResource("BTAction_2nxei")]
+
+[sub_resource type="BBVariant" id="BBVariant_j2b13"]
+type = 1
+saved_value = false
+resource_name = "false"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_ffvfg"]
+variable = &"is_range"
+value = SubResource("BBVariant_j2b13")
+
+[sub_resource type="BTAction" id="BTAction_1c4rb"]
+script = ExtResource("1_jrvfx")
+animation_name = "idle"
+enable_direction = true
+direction = -1
+
+[sub_resource type="BTAction" id="BTAction_4urr6"]
+script = ExtResource("2_m7jm1")
+
+[sub_resource type="BTSequence" id="BTSequence_ba2wy"]
+custom_name = "不在范围内"
+children = [SubResource("BTCheckVar_ffvfg"), SubResource("BTAction_1c4rb"), SubResource("BTAction_4urr6")]
+
+[sub_resource type="BBVariant" id="BBVariant_2nxei"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_82m0e"]
+variable = &"is_range"
+value = SubResource("BBVariant_2nxei")
+
+[sub_resource type="BTAction" id="BTAction_hhm5y"]
+script = ExtResource("3_yp2vy")
+
+[sub_resource type="BTAction" id="BTAction_8riuy"]
+script = ExtResource("1_jrvfx")
+animation_name = "idle"
+direction = -1
+
+[sub_resource type="BTAction" id="BTAction_c6a72"]
+script = ExtResource("2_m7jm1")
+visible = true
+
+[sub_resource type="BTAction" id="BTAction_j2b13"]
+script = ExtResource("5_yp2vy")
+input_key = "dialogue"
+
+[sub_resource type="BTAction" id="BTAction_ffvfg"]
+script = ExtResource("6_j2b13")
+dialogue_name = "blacksmith_prompt"
+
+[sub_resource type="BTSequence" id="BTSequence_d3qfl"]
+custom_name = "在范围内"
+children = [SubResource("BTCheckVar_82m0e"), SubResource("BTAction_hhm5y"), SubResource("BTAction_8riuy"), SubResource("BTAction_c6a72"), SubResource("BTAction_j2b13"), SubResource("BTAction_ffvfg")]
+
+[sub_resource type="BTSelector" id="BTSelector_rofym"]
+children = [SubResource("BTSequence_82m0e"), SubResource("BTSequence_ba2wy"), SubResource("BTSequence_d3qfl")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_e7e4y")
+root_task = SubResource("BTSelector_rofym")

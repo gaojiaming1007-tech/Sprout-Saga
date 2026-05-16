@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://batlcr2jeqwmh"]
+
+[ext_resource type="Script" uid="uid://c4iwylfykndvf" path="res://scenes/main/children/main_button/main_button.gd" id="1_e0ul1"]
+[ext_resource type="Texture2D" uid="uid://cpv0h4sf5m46s" path="res://used/ui/main_button_default.atlastex" id="1_hxmle"]
+[ext_resource type="Texture2D" uid="uid://djt14mwa082wx" path="res://used/ui/main_button_focus.atlastex" id="2_tk0qt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tk0qt"]
+texture = ExtResource("1_hxmle")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e6qr0"]
+texture = ExtResource("2_tk0qt")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vua20"]
+texture = ExtResource("1_hxmle")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_keghy"]
+texture = ExtResource("2_tk0qt")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 4.0
+
+[node name="MainButton" type="Button" unique_id=1140839651]
+custom_minimum_size = Vector2(76, 24)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_tk0qt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e6qr0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vua20")
+theme_override_styles/focus = SubResource("StyleBoxTexture_keghy")
+text = "新的开始"
+script = ExtResource("1_e0ul1")
+metadata/_custom_type_script = "uid://c4iwylfykndvf"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

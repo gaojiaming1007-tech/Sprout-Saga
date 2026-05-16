@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cthk24f5q1kkf"]
+
+[ext_resource type="Script" uid="uid://dkfn5pkd744mj" path="res://compoents/character/children/attribute/children/bag/children/status_info/status_info.gd" id="1_kaq3w"]
+[ext_resource type="Texture2D" uid="uid://dlgjblsady8qh" path="res://used/ui/health_bar.atlastex" id="2_27p61"]
+[ext_resource type="Texture2D" uid="uid://cdo3mdt67fibe" path="res://used/ui/health_inner.atlastex" id="3_ygy34"]
+[ext_resource type="Texture2D" uid="uid://d2ikn5s6035i2" path="res://used/ui/experience_bar.atlastex" id="4_aju11"]
+[ext_resource type="Texture2D" uid="uid://dlkmcbftfrtan" path="res://used/ui/experience_inner.atlastex" id="5_82hn4"]
+[ext_resource type="Texture2D" uid="uid://63hhs0teodew" path="res://used/ui/coin.atlastex" id="6_aju11"]
+
+[node name="StatusInfo" type="Control" unique_id=1666395931]
+custom_minimum_size = Vector2(136, 26)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 136.0
+offset_bottom = 26.0
+script = ExtResource("1_kaq3w")
+metadata/_custom_type_script = "uid://dkfn5pkd744mj"
+
+[node name="HealthBar" type="NinePatchRect" parent="." unique_id=1369921779]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 8.0
+texture = ExtResource("2_27p61")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 12
+patch_margin_bottom = 3
+
+[node name="HealthInner" type="NinePatchRect" parent="HealthBar" unique_id=1197599828]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 69.0
+offset_bottom = 6.0
+texture = ExtResource("3_ygy34")
+patch_margin_left = 2
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="ExperienceBar" type="NinePatchRect" parent="." unique_id=941677135]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 80.0
+offset_bottom = 21.0
+texture = ExtResource("4_aju11")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 12
+patch_margin_bottom = 3
+
+[node name="ExperienceBarInner" type="NinePatchRect" parent="ExperienceBar" unique_id=1744413860]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 69.0
+offset_bottom = 6.0
+texture = ExtResource("5_82hn4")
+patch_margin_left = 2
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=686063598]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 88.0
+offset_top = 7.0
+offset_right = 104.0
+offset_bottom = 23.0
+texture = ExtResource("6_aju11")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Money" type="Label" parent="." unique_id=1654671848]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 102.0
+offset_top = 12.0
+offset_right = 122.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "9999"

@@ -1,0 +1,141 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://dx8q80bnbamyf"]
+
+[ext_resource type="Script" uid="uid://cbe6l0cxdjhu8" path="res://ai/tasks/set_interace_visible.gd" id="1_qqtlw"]
+[ext_resource type="Script" uid="uid://bkvrihru7otkq" path="res://ai/tasks/search_destination.gd" id="2_e05hd"]
+[ext_resource type="Script" uid="uid://cewhtxngtuqqp" path="res://ai/tasks/play_direction_animation.gd" id="2_mdgqp"]
+[ext_resource type="Script" uid="uid://ds38rvj860djs" path="res://ai/tasks/await_input.gd" id="3_e05hd"]
+[ext_resource type="Script" uid="uid://ccok17f8faxfa" path="res://ai/tasks/move_to_destionation.gd" id="3_ym1yg"]
+[ext_resource type="Script" uid="uid://dcfy74uyigp5j" path="res://ai/tasks/play_direction_one_shot_animation.gd" id="4_ym1yg"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_ui7ju"]
+var/is_range/name = &"is_range"
+var/is_range/type = 1
+var/is_range/value = false
+var/is_range/hint = 0
+var/is_range/hint_string = ""
+var/petting/name = &"petting"
+var/petting/type = 1
+var/petting/value = false
+var/petting/hint = 0
+var/petting/hint_string = ""
+
+[sub_resource type="BBVariant" id="BBVariant_ym1yg"]
+type = 1
+saved_value = false
+resource_name = "<null>"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_lpmjd"]
+variable = &"is_range"
+value = SubResource("BBVariant_ym1yg")
+
+[sub_resource type="BTAction" id="BTAction_qqtlw"]
+script = ExtResource("1_qqtlw")
+
+[sub_resource type="BTAction" id="BTAction_lpmjd"]
+script = ExtResource("2_e05hd")
+
+[sub_resource type="BTAction" id="BTAction_u1mq5"]
+script = ExtResource("3_ym1yg")
+contrary = true
+
+[sub_resource type="BTAction" id="BTAction_y616i"]
+script = ExtResource("4_ym1yg")
+animation_name = "start_chew"
+enable_direction = true
+direction = 1
+
+[sub_resource type="BTAction" id="BTAction_ym1yg"]
+script = ExtResource("2_mdgqp")
+animation_name = "chew"
+enable_direction = true
+direction = 1
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_ym1yg"]
+min_duration = 5.0
+max_duration = 10.0
+
+[sub_resource type="BTAction" id="BTAction_aq1ci"]
+script = ExtResource("4_ym1yg")
+animation_name = "end_chew"
+enable_direction = true
+direction = 1
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_mxkk4"]
+min_duration = 2.0
+max_duration = 4.0
+
+[sub_resource type="BTSequence" id="BTSequence_u1mq5"]
+custom_name = " 不在范围"
+children = [SubResource("BTCheckVar_lpmjd"), SubResource("BTAction_qqtlw"), SubResource("BTAction_lpmjd"), SubResource("BTAction_u1mq5"), SubResource("BTAction_y616i"), SubResource("BTAction_ym1yg"), SubResource("BTRandomWait_ym1yg"), SubResource("BTAction_aq1ci"), SubResource("BTRandomWait_mxkk4")]
+
+[sub_resource type="BBVariant" id="BBVariant_wqi5g"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_wyeeb"]
+variable = &"is_range"
+value = SubResource("BBVariant_wqi5g")
+
+[sub_resource type="BBVariant" id="BBVariant_y616i"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_aq1ci"]
+variable = &"petting"
+value = SubResource("BBVariant_y616i")
+
+[sub_resource type="BTAction" id="BTAction_mxkk4"]
+script = ExtResource("1_qqtlw")
+
+[sub_resource type="BTSequence" id="BTSequence_48fud"]
+children = [SubResource("BTCheckVar_aq1ci"), SubResource("BTAction_mxkk4")]
+
+[sub_resource type="BBVariant" id="BBVariant_8m06y"]
+type = 1
+saved_value = false
+resource_name = "<null>"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_7urmg"]
+variable = &"petting"
+value = SubResource("BBVariant_8m06y")
+
+[sub_resource type="BTAction" id="BTAction_81qfr"]
+script = ExtResource("1_qqtlw")
+visible = true
+
+[sub_resource type="BTSequence" id="BTSequence_qhxsr"]
+children = [SubResource("BTCheckVar_7urmg"), SubResource("BTAction_81qfr")]
+
+[sub_resource type="BTSelector" id="BTSelector_qqtlw"]
+children = [SubResource("BTSequence_48fud"), SubResource("BTSequence_qhxsr")]
+
+[sub_resource type="BTAction" id="BTAction_6fb35"]
+script = ExtResource("2_mdgqp")
+animation_name = "idle"
+enable_direction = true
+direction = 1
+
+[sub_resource type="BTAction" id="BTAction_gycl0"]
+script = ExtResource("3_e05hd")
+input_key = "dialogue"
+
+[sub_resource type="BBNode" id="BBNode_cfsn0"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_1d4er"]
+node = SubResource("BBNode_cfsn0")
+method = &"emit_character_petting"
+
+[sub_resource type="BTSequence" id="BTSequence_lu5g0"]
+custom_name = "在范围"
+children = [SubResource("BTCheckVar_wyeeb"), SubResource("BTSelector_qqtlw"), SubResource("BTAction_6fb35"), SubResource("BTAction_gycl0"), SubResource("BTCallMethod_1d4er")]
+
+[sub_resource type="BTSelector" id="BTSelector_julv4"]
+children = [SubResource("BTSequence_u1mq5"), SubResource("BTSequence_lu5g0")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_ui7ju")
+root_task = SubResource("BTSelector_julv4")

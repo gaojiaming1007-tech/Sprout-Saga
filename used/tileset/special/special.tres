@@ -1,0 +1,33 @@
+[gd_resource type="TileSet" format=3 uid="uid://cjdj4cc1x2d0c"]
+
+[ext_resource type="Texture2D" uid="uid://twgvifj0pewk" path="res://Assets/Tileset/Special/bubbles.png" id="1_cen31"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rm7jr"]
+texture = ExtResource("1_cen31")
+0:0/next_alternative_id = 4
+0:0/animation_columns = 7
+0:0/animation_speed = 7.0
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/1/custom_data_0 = true
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/2/custom_data_0 = true
+0:0/3 = 3
+0:0/3/transpose = true
+0:0/3/custom_data_0 = true
+
+[resource]
+custom_data_layer_0/name = "bubble"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_rm7jr")

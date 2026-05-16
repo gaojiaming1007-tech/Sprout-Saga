@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bs0qfoelysugm" path="res://used/ui/bag_banner.tres" id="2_dfycu"]
 [ext_resource type="PackedScene" uid="uid://bei2qom15ugoo" path="res://compoents/character/children/attribute/children/bag/children/bag_item/bag_item.tscn" id="2_h4pyo"]
 [ext_resource type="Texture2D" uid="uid://br2fnb68xescq" path="res://used/ui/bag_panel.atlastex" id="2_iagcr"]
+[ext_resource type="PackedScene" uid="uid://cthk24f5q1kkf" path="res://compoents/character/children/attribute/children/bag/children/status_info/status_info.tscn" id="3_h3lwr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3lwr"]
 texture = ExtResource("2_iagcr")
@@ -19,7 +20,7 @@ texture_margin_top = 9.0
 texture_margin_right = 9.0
 texture_margin_bottom = 9.0
 
-[node name="Bag" type="Control" unique_id=1351068144]
+[node name="Bag" type="Control" unique_id=1351068144 node_paths=PackedStringArray("panel")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 30.0
@@ -27,6 +28,7 @@ offset_top = 3.0
 offset_right = 30.0
 offset_bottom = 3.0
 script = ExtResource("1_jl1qm")
+panel = NodePath("PanelContainer")
 metadata/_custom_type_script = "uid://csxd388eqpaiy"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1031873411]
@@ -34,6 +36,9 @@ layout_mode = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_h3lwr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1921882825]
+layout_mode = 2
+
+[node name="StatusInfo" parent="PanelContainer/VBoxContainer" unique_id=1666395931 instance=ExtResource("3_h3lwr")]
 layout_mode = 2
 
 [node name="BagPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=2086343552]

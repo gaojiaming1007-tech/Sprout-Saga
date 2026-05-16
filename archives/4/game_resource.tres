@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GameResource" format=3]
+
+[ext_resource type="Script" path="res://structs/game_resource.gd" id="1_yqwyq"]
+
+[resource]
+script = ExtResource("1_yqwyq")
+level = 1
+hour = 10
+minute = 20

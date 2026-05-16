@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://buplbeh3aawsv"]
+
+[ext_resource type="Texture2D" uid="uid://bsn0h875c77ff" path="res://particles/texture.atlastex" id="1_lp5mu"]
+
+[sub_resource type="Curve" id="Curve_lp5mu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tfsm2"]
+curve = SubResource("Curve_lp5mu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tfsm2"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 98, 0)
+scale_curve = SubResource("CurveTexture_tfsm2")
+
+[node name="Hoe" type="GPUParticles2D" unique_id=1994848591]
+emitting = false
+amount = 10
+texture = ExtResource("1_lp5mu")
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_tfsm2")

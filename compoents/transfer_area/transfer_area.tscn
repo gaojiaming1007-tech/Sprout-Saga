@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cd5yb3idl7t56"]
+
+[ext_resource type="Script" uid="uid://cxthoikysxmy1" path="res://compoents/transfer_area/transfer_area.gd" id="1_7hx5b"]
+
+[node name="TransferArea" type="Area2D" unique_id=122686597 node_paths=PackedStringArray("timer")]
+script = ExtResource("1_7hx5b")
+timer = NodePath("Timer")
+metadata/_custom_type_script = "uid://cxthoikysxmy1"
+
+[node name="Timer" type="Timer" parent="." unique_id=2020675828]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_character_entered"]
+[connection signal="body_exited" from="." to="." method="_on_character_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

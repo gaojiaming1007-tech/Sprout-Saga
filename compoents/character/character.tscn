@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b8uqs5uhqmqd4" path="res://compoents/character/character.gd" id="1_ceta5"]
 [ext_resource type="Texture2D" uid="uid://dbp7chhggu3kx" path="res://used/character/josh/idea/idle_forward.atlastex" id="2_1tawd"]
-[ext_resource type="Resource" uid="uid://ceimdeympgyoi" path="res://resources/character_resource.tres" id="2_cdbif"]
+[ext_resource type="Resource" path="res://resources/character_resource.tres" id="2_cdbif"]
 [ext_resource type="Texture2D" uid="uid://chlxg1xg004le" path="res://used/character/josh/idea/idle_backward.atlastex" id="3_2qxqd"]
+[ext_resource type="Resource" uid="uid://b0qshpmqft1cj" path="res://resources/inventory/food/carp.tres" id="3_d31bb"]
 [ext_resource type="Shader" uid="uid://bkxcs22btqxwd" path="res://shaders/outline.gdshader" id="3_vm0j2"]
 [ext_resource type="Texture2D" uid="uid://baohsbvfu8c0c" path="res://used/character/josh/collect/collect_forward.atlastex" id="4_2e035"]
 [ext_resource type="Texture2D" uid="uid://cqthmuf7krc8s" path="res://used/character/josh/idea/idle_parallel.tres" id="4_qu5g5"]
@@ -56,6 +57,13 @@
 [ext_resource type="Texture2D" uid="uid://cfcrxehobbdxt" path="res://used/character/josh/watering/watering_backward.atlastex" id="25_l28p7"]
 [ext_resource type="Texture2D" uid="uid://clyfxxkmv27se" path="res://used/character/josh/watering/watering_forward.atlastex" id="26_y0wsn"]
 [ext_resource type="Texture2D" uid="uid://cn06wi6cpkqk" path="res://used/character/josh/watering/watering_parallel.atlastex" id="27_7t5mw"]
+[ext_resource type="Texture2D" uid="uid://chgnhdq583x10" path="res://used/character/josh/horse_idle/horse_idle_backward.atlastex" id="31_3k6en"]
+[ext_resource type="Texture2D" uid="uid://70yax640sbc8" path="res://used/character/josh/horse_idle/horse_idle_forward.atlastex" id="32_ubure"]
+[ext_resource type="Texture2D" uid="uid://bfff7aeq5gipa" path="res://used/character/josh/horse_idle/horse_idle_parallel.atlastex" id="33_6i1si"]
+[ext_resource type="Texture2D" uid="uid://bhe0w4sponchw" path="res://used/character/josh/horse_run/horse_run_backward.atlastex" id="34_vjd5f"]
+[ext_resource type="Texture2D" uid="uid://txp1dbuw7nbf" path="res://used/character/josh/horse_run/horse_run_forward.atlastex" id="35_dq22t"]
+[ext_resource type="Texture2D" uid="uid://qd3dda30maco" path="res://used/character/josh/horse_run/horse_run_parallel.atlastex" id="36_ol6qe"]
+[ext_resource type="Texture2D" uid="uid://d0cx7kkp1fsfm" path="res://Assets/Character/Josh/Petting/Petting.png" id="42_kwm6i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rhbpl"]
 shader = ExtResource("3_vm0j2")
@@ -678,6 +686,20 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_fishing_casting_target"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_r5742"]
 resource_name = "fishing_casting_forward"
@@ -719,6 +741,20 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_fishing_casting_target"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_d2uvk"]
 resource_name = "fishing_casting_parallel"
@@ -759,6 +795,20 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_fishing_casting_target"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_d31bb"]
@@ -1301,6 +1351,258 @@ tracks/3/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_jk627"]
+resource_name = "horse_idle_backward"
+length = 0.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphice/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("31_3k6en")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Graphice/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Graphice/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_3waqa"]
+resource_name = "horse_idle_forward"
+length = 0.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphice/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("32_ubure")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Graphice/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Graphice/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_y8kbp"]
+resource_name = "horse_idle_parallel"
+length = 0.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphice/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("33_6i1si")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Graphice/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Graphice/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_7g4yg"]
+resource_name = "horse_run_backward"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphice/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("34_vjd5f")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Graphice/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Graphice/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_twqax"]
+resource_name = "horse_run_forward"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphice/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("35_dq22t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Graphice/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Graphice/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_5qpfw"]
+resource_name = "horse_run_parallel"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphice/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("36_ol6qe")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Graphice/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Graphice/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
 [sub_resource type="Animation" id="Animation_32mdf"]
 resource_name = "idle_backward"
 length = 0.4
@@ -1805,6 +2107,46 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
+[sub_resource type="Animation" id="Animation_gypbd"]
+resource_name = "petting_forward"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphice/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("42_kwm6i")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Graphice/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Graphice/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 2, 3, 2, 3, 2, 3, 2]
+}
+
 [sub_resource type="Animation" id="Animation_cdbif"]
 resource_name = "run_backward"
 length = 0.8
@@ -1845,6 +2187,23 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footsteps"
+}, {
+"args": [],
+"method": &"play_footsteps"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_cm36h"]
@@ -1888,6 +2247,23 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footsteps"
+}, {
+"args": [],
+"method": &"play_footsteps"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_qe6rf"]
 resource_name = "run_parallel"
@@ -1929,6 +2305,23 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footsteps"
+}, {
+"args": [],
+"method": &"play_footsteps"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_kjetm"]
@@ -2137,6 +2530,23 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footsteps"
+}, {
+"args": [],
+"method": &"play_footsteps"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_hhyww"]
 resource_name = "walk_forward"
@@ -2179,6 +2589,23 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footsteps"
+}, {
+"args": [],
+"method": &"play_footsteps"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_xbw66"]
 resource_name = "walk_parallel"
@@ -2220,6 +2647,23 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footsteps"
+}, {
+"args": [],
+"method": &"play_footsteps"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_ba3yy"]
@@ -2417,6 +2861,12 @@ _data = {
 &"hoe_backward": SubResource("Animation_e7m03"),
 &"hoe_forward": SubResource("Animation_s8xtp"),
 &"hoe_parallel": SubResource("Animation_7oauf"),
+&"horse_idle_backward": SubResource("Animation_jk627"),
+&"horse_idle_forward": SubResource("Animation_3waqa"),
+&"horse_idle_parallel": SubResource("Animation_y8kbp"),
+&"horse_run_backward": SubResource("Animation_7g4yg"),
+&"horse_run_forward": SubResource("Animation_twqax"),
+&"horse_run_parallel": SubResource("Animation_5qpfw"),
 &"idle_backward": SubResource("Animation_32mdf"),
 &"idle_forward": SubResource("Animation_yqnsj"),
 &"idle_parallel": SubResource("Animation_fs1y8"),
@@ -2429,6 +2879,7 @@ _data = {
 &"lift_walk_backward": SubResource("Animation_rhbpl"),
 &"lift_walk_forward": SubResource("Animation_c870v"),
 &"lift_walk_parallel": SubResource("Animation_twwgj"),
+&"petting_forward": SubResource("Animation_gypbd"),
 &"run_backward": SubResource("Animation_cdbif"),
 &"run_forward": SubResource("Animation_cm36h"),
 &"run_parallel": SubResource("Animation_qe6rf"),
@@ -2443,9 +2894,10 @@ _data = {
 &"watering_parallel": SubResource("Animation_h78tn")
 }
 
-[node name="Character" type="CharacterBody2D" unique_id=1688369041 node_paths=PackedStringArray("animation_tree", "graphics", "sprite", "attribute", "lift_sprite", "interact", "animation_state")]
+[node name="Character" type="CharacterBody2D" unique_id=1688369041 node_paths=PackedStringArray("animation_tree", "graphics", "sprite", "attribute", "lift_sprite", "interact", "animation_state", "roll_energy_parent")]
 z_index = 400
 z_as_relative = false
+y_sort_enabled = true
 script = ExtResource("1_ceta5")
 animation_tree = NodePath("AnimationTree")
 graphics = NodePath("Graphice")
@@ -2455,18 +2907,20 @@ attribute = NodePath("Attribute")
 lift_sprite = NodePath("Graphice/Sprite2D/Marker2D/LiftSprite2D")
 interact = NodePath("Interact")
 animation_state = NodePath("AnimationState")
+roll_energy_parent = NodePath("RollEngyParent")
+carp = ExtResource("3_d31bb")
 metadata/_custom_type_script = "uid://b8uqs5uhqmqd4"
 
 [node name="Graphice" type="Node2D" parent="." unique_id=228644881]
 
 [node name="Sprite2D" type="Sprite2D" parent="Graphice" unique_id=1670496434]
 material = SubResource("ShaderMaterial_rhbpl")
-position = Vector2(0, -10)
 texture = ExtResource("2_1tawd")
+offset = Vector2(0, -10)
 hframes = 4
 
 [node name="Marker2D" type="Marker2D" parent="Graphice/Sprite2D" unique_id=1358426800]
-position = Vector2(0, -6)
+position = Vector2(0, -20)
 
 [node name="LiftSprite2D" type="Sprite2D" parent="Graphice/Sprite2D/Marker2D" unique_id=1291609730]
 
@@ -2492,6 +2946,12 @@ parameters/movement_state/1/run/blend_amount = 0.0
 parameters/movement_state/1/TimeScale/scale = 0.7000000000000028
 parameters/movement_state/2/fishing_wait/blend_amount = 0.0
 parameters/movement_state/3/fishing_hooked/blend_amount = 0.0
+parameters/movement_state/4/steed/blend_position = 0.0
+parameters/movement_state/4/steed/0/horse/blend_amount = 0.0
+parameters/movement_state/4/steed/0/idle/blend_amount = 0.0
+parameters/movement_state/4/steed/0/walk/blend_amount = 0.0
+parameters/movement_state/4/steed/0/run/blend_amount = 0.0
+parameters/movement_state/4/steed/0/TimeScale/scale = 1.7999999999999972
 parameters/one_shot/active = false
 parameters/one_shot/internal_active = false
 parameters/one_shot/request = 0
@@ -2504,6 +2964,8 @@ parameters/one_shot_state/4/axe/blend_amount = 0.0
 parameters/one_shot_state/5/fishing_casting/blend_amount = 0.0
 parameters/one_shot_state/6/fishing_capture_no_fish/blend_amount = 0.0
 parameters/one_shot_state/7/fishing_capture_fish/blend_amount = 0.0
+parameters/one_shot_state/8/fishing_roll/blend_amount = 0.0
+parameters/one_shot_state/9/petting/blend_amount = 0.0
 
 [node name="AnimationState" parent="." unique_id=875492941 instance=ExtResource("12_xbw66")]
 
@@ -2514,3 +2976,6 @@ offset_left = 10.0
 offset_top = -20.0
 offset_right = 50.0
 offset_bottom = 20.0
+
+[node name="RollEngyParent" type="Marker2D" parent="." unique_id=2084202038]
+position = Vector2(17, -27)

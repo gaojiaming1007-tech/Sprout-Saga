@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ScheduleListResource" format=3 uid="uid://b4w2bydy55d4k"]
+
+[ext_resource type="Script" uid="uid://c8uc13s7b4nii" path="res://structs/scheduledule_resource.gd" id="1_hx6br"]
+[ext_resource type="Script" uid="uid://cxvso7o4al1um" path="res://structs/schedule_list_resource.gd" id="2_3vwgd"]
+[ext_resource type="Resource" uid="uid://b50gthijapej8" path="res://resources/schedule/blacksmith/rest.tres" id="2_iwq8m"]
+
+[resource]
+script = ExtResource("2_3vwgd")
+list = Array[ExtResource("1_hx6br")]([ExtResource("2_iwq8m")])
+metadata/_custom_type_script = "uid://cxvso7o4al1um"

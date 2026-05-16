@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://bkl6yaswpmiis"]
+
+[ext_resource type="Script" uid="uid://3nv3nuv1rytp" path="res://compoents/streetlight/streetlight.gd" id="1_fkx13"]
+[ext_resource type="Texture2D" uid="uid://0xsr4knrm1wu" path="res://compoents/streetlight/on.atlastex" id="2_2lk7a"]
+[ext_resource type="Texture2D" uid="uid://8ptacu4qdkuv" path="res://resources/light_texture/fade.tres" id="3_aajx0"]
+[ext_resource type="Texture2D" uid="uid://cnywoqallwu5w" path="res://compoents/streetlight/off.tres" id="5_lheye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lk7a"]
+size = Vector2(12, 10)
+
+[sub_resource type="Animation" id="Animation_d5pmm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_2lk7a")]
+}
+
+[sub_resource type="Animation" id="Animation_yg5uy"]
+resource_name = "off"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_lheye")]
+}
+
+[sub_resource type="Animation" id="Animation_qc4aj"]
+resource_name = "on"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_2lk7a")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qspxh"]
+_data = {
+&"RESET": SubResource("Animation_d5pmm"),
+&"off": SubResource("Animation_yg5uy"),
+&"on": SubResource("Animation_qc4aj")
+}
+
+[node name="Streetlight" type="Node2D" unique_id=511424936 node_paths=PackedStringArray("animtion_player")]
+z_index = 400
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_fkx13")
+animtion_player = NodePath("AnimationPlayer")
+metadata/_custom_type_script = "uid://3nv3nuv1rytp"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=546073509]
+position = Vector2(0, -18)
+texture = ExtResource("2_2lk7a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2015781164]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=11533764]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_2lk7a")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1176730306]
+position = Vector2(0, -26)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
+texture = ExtResource("3_aajx0")
+texture_scale = 0.4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1731671516]
+libraries/ = SubResource("AnimationLibrary_qspxh")

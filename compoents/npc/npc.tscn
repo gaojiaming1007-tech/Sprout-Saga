@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://bbpjw6dwxmwb1"]
+
+[ext_resource type="Script" uid="uid://7o33insqwdye" path="res://compoents/npc/npc.gd" id="1_bk77a"]
+[ext_resource type="Texture2D" uid="uid://bcttul8lygj6n" path="res://used/keyboard/r.atlastex" id="2_yue8y"]
+[ext_resource type="BehaviorTree" uid="uid://c7c2u1phl7o2g" path="res://ai/trees/test.tres" id="3_dvflm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dvflm"]
+radius = 48.09366
+
+[sub_resource type="Animation" id="Animation_7q07y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bg8h4"]
+resource_name = "bounce"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 0), Vector2(0, -1), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n1bqj"]
+_data = {
+&"RESET": SubResource("Animation_7q07y"),
+&"bounce": SubResource("Animation_bg8h4")
+}
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_n1bqj"]
+
+[node name="NPC" type="Node2D" unique_id=1786249641 node_paths=PackedStringArray("machine", "graphics", "animation_sprite2d", "interact")]
+z_index = 400
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_bk77a")
+machine = NodePath("BTPlayer")
+graphics = NodePath("Graphics")
+animation_sprite2d = NodePath("Graphics/AnimatedSprite2D")
+interact = NodePath("Interact")
+metadata/_custom_type_script = "uid://7o33insqwdye"
+
+[node name="Graphics" type="Node2D" parent="." unique_id=254521502]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Graphics" unique_id=361645]
+offset = Vector2(0, -10)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1932952988]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1286609069]
+shape = SubResource("CircleShape2D_dvflm")
+
+[node name="Interact" type="Control" parent="." unique_id=1857961487]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
+
+[node name="Root" type="HBoxContainer" parent="Interact" unique_id=1845337610]
+layout_mode = 0
+offset_right = 36.0
+offset_bottom = 16.0
+
+[node name="Icon" type="TextureRect" parent="Interact/Root" unique_id=1317451519]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_yue8y")
+
+[node name="Text" type="Label" parent="Interact/Root" unique_id=165975603]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "交互"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Interact" unique_id=1050882586]
+libraries/ = SubResource("AnimationLibrary_n1bqj")
+autoplay = &"bounce"
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=1464236225]
+behavior_tree = ExtResource("3_dvflm")
+blackboard_plan = SubResource("BlackboardPlan_n1bqj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_character_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_character_exited"]

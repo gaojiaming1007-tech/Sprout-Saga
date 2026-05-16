@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://1iqw8imiankq"]
+
+[ext_resource type="Script" uid="uid://10jqyejdjhia" path="res://compoents/character/children/attribute/children/menu/menu.gd" id="1_pi5kd"]
+[ext_resource type="PackedScene" uid="uid://bepmrmjbybcym" path="res://compoents/character/children/attribute/children/menu/children/menu_item/menu_item.tscn" id="2_uqab6"]
+[ext_resource type="Texture2D" uid="uid://dwgmuygyx3f1c" path="res://compoents/character/children/attribute/children/menu/children/menu_item/bag.atlastex" id="3_6l1bh"]
+[ext_resource type="Texture2D" uid="uid://ros8lawin72b" path="res://compoents/character/children/attribute/children/menu/children/menu_item/task.atlastex" id="4_tmtdb"]
+[ext_resource type="Texture2D" uid="uid://bl3qgovnmhbou" path="res://used/ui/handbook.atlastex" id="5_tmtdb"]
+
+[node name="Menu" type="Control" unique_id=1049235745]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_pi5kd")
+metadata/_custom_type_script = "uid://10jqyejdjhia"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1861349354]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 80.0
+offset_right = 23.0
+offset_bottom = 120.0
+mouse_filter = 2
+
+[node name="Bag" parent="VBoxContainer" unique_id=1045641424 instance=ExtResource("2_uqab6")]
+layout_mode = 2
+icon = ExtResource("3_6l1bh")
+
+[node name="Task" parent="VBoxContainer" unique_id=1544472057 instance=ExtResource("2_uqab6")]
+layout_mode = 2
+icon = ExtResource("4_tmtdb")
+
+[node name="Handbook" parent="VBoxContainer" unique_id=495674180 instance=ExtResource("2_uqab6")]
+layout_mode = 2
+icon = ExtResource("5_tmtdb")

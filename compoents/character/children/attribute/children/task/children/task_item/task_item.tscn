@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://duiinwfk7eh1"]
+
+[ext_resource type="Script" uid="uid://cw1nlpae3ps1n" path="res://compoents/character/children/attribute/children/task/children/task_item/task_item.gd" id="1_6xdb6"]
+[ext_resource type="Texture2D" uid="uid://n822yt1g1qj8" path="res://used/ui/task_item_default.tres" id="2_spc8l"]
+[ext_resource type="Texture2D" uid="uid://benv0w8w2hox3" path="res://used/ui/undone.atlastex" id="3_bbqwn"]
+[ext_resource type="Texture2D" uid="uid://oh4r7ghq34x1" path="res://used/ui/task_tiem_focus.atlastex" id="3_m1u8n"]
+[ext_resource type="Texture2D" path="res://used/ui/done.atlastex" id="4_m1u8n"]
+
+[node name="TaskItem" type="Control" unique_id=874910893]
+custom_minimum_size = Vector2(80, 18)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 80.0
+offset_bottom = 18.0
+script = ExtResource("1_6xdb6")
+done_icon = ExtResource("4_m1u8n")
+undone_icon = ExtResource("3_bbqwn")
+metadata/_custom_type_script = "uid://cw1nlpae3ps1n"
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=468439093]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture_normal = ExtResource("2_spc8l")
+texture_pressed = ExtResource("3_m1u8n")
+texture_hover = ExtResource("3_m1u8n")
+texture_focused = ExtResource("3_m1u8n")
+stretch_mode = 0
+
+[node name="Summary" type="Label" parent="TextureButton" unique_id=415559247]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_right = 59.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 6
+text = "收集物品"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="State" type="TextureRect" parent="TextureButton" unique_id=33876764]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -5.0
+offset_right = -10.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_m1u8n")
+expand_mode = 1

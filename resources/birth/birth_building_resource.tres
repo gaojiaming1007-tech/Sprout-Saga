@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BuildingResource" format=3 uid="uid://vxufqdyp3qhp"]
+
+[ext_resource type="Script" uid="uid://qn4x5afnxsi3" path="res://structs/building_resource.gd" id="1_ktixp"]
+
+[resource]
+script = ExtResource("1_ktixp")
+metadata/_custom_type_script = "uid://qn4x5afnxsi3"

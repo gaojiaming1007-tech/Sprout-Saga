@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="FellableTreeExistResource" format=3 uid="uid://c1f6g811jspu"]
+
+[ext_resource type="Script" uid="uid://8w5u3sqkbtuh" path="res://structs/fellable_tree_exist_resource.gd" id="1_hd3dx"]
+
+[resource]
+script = ExtResource("1_hd3dx")
+metadata/_custom_type_script = "uid://8w5u3sqkbtuh"

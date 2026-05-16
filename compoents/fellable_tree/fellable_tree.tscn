@@ -58,12 +58,14 @@ animation_player = NodePath("AnimationPlayer")
 metadata/_custom_type_script = "uid://bmsrcvn5wmgdj"
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=698421544]
-z_index = 400
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(8, 16)
 
 [node name="Sprite2D" type="Sprite2D" parent="Marker2D" unique_id=2047406647]
+z_index = 400
+z_as_relative = false
+y_sort_enabled = true
 texture = ExtResource("2_u0x4a")
 centered = false
 offset = Vector2(-16, -48)

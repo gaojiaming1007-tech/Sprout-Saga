@@ -16,5 +16,5 @@ func play_effect(at_position: Vector2):
     character.update_face_direction(at_position)
     character.animation_state.start_one_shot(Character.OneShotState.Hoe)
     await character.hoe_target
-    # ParticleManager.spawn_particle(ParticleManager.ParticleType.Hoe, UtilsManager.transform_position_tile(at_position) + Vector2i(8, 8))
+    ParticleManager.spawn_particle(ParticleManager.ParticleType.Hoe, UtilsManager.transform_position_tile(at_position) + Vector2i(8, 8))
     GameManager.game.current_level_instance.add_farmland(hoe_position)

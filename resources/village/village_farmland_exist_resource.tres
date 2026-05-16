@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="FarmlandExistResource" format=3 uid="uid://mv2h8dr7ee3f"]
+
+[ext_resource type="Resource" uid="uid://bs2117wh4v5b5" path="res://resources/inventory/seed/carrot_seed.tres" id="1_4v6j6"]
+[ext_resource type="Script" uid="uid://ckxjp8w0qd6yy" path="res://structs/farmland_exist_resource.gd" id="1_kspaq"]
+
+[resource]
+script = ExtResource("1_kspaq")
+lands = Array[Dictionary]([{
+"cell": Vector2i(15, -33),
+"growth_time": 1345,
+"inventory": ExtResource("1_4v6j6"),
+"moisture": 0,
+"position": Vector2i(240, -528)
+}, {
+"cell": Vector2i(15, -32),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(240, -512)
+}, {
+"cell": Vector2i(15, -31),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(240, -496)
+}, {
+"cell": Vector2i(15, -30),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(240, -480)
+}, {
+"cell": Vector2i(16, -33),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(256, -528)
+}, {
+"cell": Vector2i(16, -32),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(256, -512)
+}, {
+"cell": Vector2i(16, -31),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(256, -496)
+}, {
+"cell": Vector2i(16, -30),
+"growth_time": 0,
+"inventory": null,
+"moisture": 0,
+"position": Vector2i(256, -480)
+}])
+metadata/_custom_type_script = "uid://ckxjp8w0qd6yy"

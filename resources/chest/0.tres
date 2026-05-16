@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChestResource" format=3 uid="uid://c0gkvugdpefk4"]
+
+[ext_resource type="Resource" uid="uid://fys2lryy6hf" path="res://resources/inventory/crop/carrot.tres" id="1_6yjdp"]
+[ext_resource type="Script" uid="uid://b3jgatm4p3bxr" path="res://structs/chest_resource.gd" id="1_e2xp7"]
+
+[resource]
+script = ExtResource("1_e2xp7")
+chest = Array[Dictionary]([{}, {}, {}, {}, {
+"count": 15,
+"inventory": ExtResource("1_6yjdp")
+}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}])
+metadata/_custom_type_script = "uid://b3jgatm4p3bxr"

@@ -30,6 +30,10 @@ func _process(delta):
 func update_visible():
     var character = GameManager.game.character
 
+    if character.is_dialogue:
+        visible = false
+        return
+
     if character.current_action_state == Character.ActionState.OneShot:
         visible = false
         return
@@ -37,6 +41,9 @@ func update_visible():
         visible = false
         return
     if character.is_fishing:
+        visible = false
+        return
+    if character.character_resource.current_steed_type != Character.SteedType.None:
         visible = false
         return
     

@@ -3,13 +3,25 @@
 [ext_resource type="Script" uid="uid://bicmk7lnehf6a" path="res://compoents/character/children/attribute/attribute.gd" id="1_3i1xa"]
 [ext_resource type="PackedScene" uid="uid://bods2h2oe1pl5" path="res://compoents/character/children/attribute/children/bag/bag.tscn" id="2_hg5ht"]
 [ext_resource type="PackedScene" uid="uid://bdf3cea24uqyt" path="res://compoents/character/children/attribute/children/hold/hold.tscn" id="3_b7heq"]
+[ext_resource type="PackedScene" uid="uid://1iqw8imiankq" path="res://compoents/character/children/attribute/children/menu/menu.tscn" id="4_htvec"]
+[ext_resource type="PackedScene" uid="uid://8ifqbc0nyiie" path="res://compoents/character/children/attribute/children/task/task.tscn" id="5_c7kt7"]
+[ext_resource type="PackedScene" uid="uid://03avphlr35g1" path="res://compoents/character/children/attribute/children/handbook/handbook.tscn" id="6_vxudc"]
 
-[node name="Attribute" type="CanvasLayer" unique_id=1019521583 node_paths=PackedStringArray("bag", "hold")]
+[node name="Attribute" type="CanvasLayer" unique_id=1019521583 node_paths=PackedStringArray("bag", "hold", "menu", "task", "handbook")]
 script = ExtResource("1_3i1xa")
 bag = NodePath("Bag")
 hold = NodePath("Hold")
+menu = NodePath("Menu")
+task = NodePath("Task")
+handbook = NodePath("Handbook")
 metadata/_custom_type_script = "uid://bicmk7lnehf6a"
 
 [node name="Bag" parent="." unique_id=1351068144 instance=ExtResource("2_hg5ht")]
 
 [node name="Hold" parent="." unique_id=2037234211 instance=ExtResource("3_b7heq")]
+
+[node name="Menu" parent="." unique_id=1049235745 instance=ExtResource("4_htvec")]
+
+[node name="Task" parent="." unique_id=480397317 instance=ExtResource("5_c7kt7")]
+
+[node name="Handbook" parent="." unique_id=765111248 instance=ExtResource("6_vxudc")]

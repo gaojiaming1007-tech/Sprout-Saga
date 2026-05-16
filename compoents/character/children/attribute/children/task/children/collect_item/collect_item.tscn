@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c812to0sl82tt"]
+
+[ext_resource type="PackedScene" uid="uid://bxou106ys0w30" path="res://compoents/inventory_node/inventory_node.tscn" id="1_failc"]
+[ext_resource type="Script" uid="uid://bxmv1hpysd0ig" path="res://compoents/character/children/attribute/children/task/children/collect_item/collect_item.gd" id="2_vju0u"]
+
+[node name="CollectItem" unique_id=1514099410 instance=ExtResource("1_failc")]
+script = ExtResource("2_vju0u")

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://hub73sikhuf5"]
+
+[ext_resource type="Script" uid="uid://bmf4rrmemkj4b" path="res://managers/prompt_manager/children/celebrate/celebrate.gd" id="1_gj5x8"]
+[ext_resource type="Texture2D" uid="uid://c31au28d2ngdv" path="res://used/ui/celebrate_panel.atlastex" id="2_t7ed6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gj5x8"]
+bg_color = Color(0, 0, 0, 0.54901963)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ey4s6"]
+texture = ExtResource("2_t7ed6")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[node name="Celebrate" type="CanvasLayer" unique_id=1447268475 node_paths=PackedStringArray("root")]
+layer = 5
+script = ExtResource("1_gj5x8")
+root = NodePath("Root")
+metadata/_custom_type_script = "uid://bmf4rrmemkj4b"
+
+[node name="Root" type="PanelContainer" parent="." unique_id=318159871]
+custom_minimum_size = Vector2(160, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 5.0
+offset_right = 80.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gj5x8")
+
+[node name="PanelContainer" type="PanelContainer" parent="Root" unique_id=1479880604]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ey4s6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/PanelContainer" unique_id=110662718]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/PanelContainer/VBoxContainer" unique_id=380100957]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "任务完成"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RewardContainer" type="HBoxContainer" parent="Root/PanelContainer/VBoxContainer" unique_id=197249664]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1

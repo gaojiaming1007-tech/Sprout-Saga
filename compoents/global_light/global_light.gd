@@ -14,13 +14,15 @@ func _ready() -> void:
 
 func on_time_update():
     if GameManager.game.current_level_instance:
+        if GameManager.game.current_level_instance.level_location == Level.LevelLocation.Outside:
             var resource = GameManager.game.game_resource
             var current_hour = float(resource.hour) + (float(resource.minute) / 60.0)
             var cosine_value = cos((current_hour / 12) * PI)
             ## [-1,1] -> [0,1]
             var normailzed = (cosine_value + 1) / 2
             current_energy = curve.sample(normailzed)
-        
+        else:
+            current_energy = 0
     else:
         current_energy = 1
 

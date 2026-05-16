@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://btio24iionn3m"]
+
+[ext_resource type="Script" uid="uid://bwy7hmk0k44jk" path="res://managers/utils_manager/children/shop/children/selling_area/selling_area.gd" id="1_e5xgf"]
+[ext_resource type="Texture2D" uid="uid://b37mjm0ph24au" path="res://used/ui/selling.atlastex" id="2_vxo3y"]
+
+[node name="SellingArea" type="Control" unique_id=1882394845]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_e5xgf")
+metadata/_custom_type_script = "uid://bwy7hmk0k44jk"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1625661114]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.5211406, 0.5211406, 0.5211405, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=194536938]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_vxo3y")
+expand_mode = 1
+stretch_mode = 5

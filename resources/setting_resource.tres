@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SettingResource" format=3 uid="uid://b7ylvbkc1lkcd"]
+
+[ext_resource type="Script" uid="uid://chc2ofjtjffm8" path="res://structs/setting_resource.gd" id="1_63bjq"]
+
+[resource]
+script = ExtResource("1_63bjq")
+current_existing_index = 4
+metadata/_custom_type_script = "uid://chc2ofjtjffm8"

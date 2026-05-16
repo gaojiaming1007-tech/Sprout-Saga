@@ -1,0 +1,85 @@
+[gd_resource type="TileSet" format=3 uid="uid://bjgagaljky485"]
+
+[ext_resource type="Texture2D" uid="uid://cdju4x8tie1sf" path="res://Assets/Tileset/Furniture/Beds.png" id="1_hyhvc"]
+[ext_resource type="Texture2D" uid="uid://bfo8v1mkl0pmc" path="res://Assets/Tileset/Furniture/Chairs.png" id="2_0lcx4"]
+[ext_resource type="Texture2D" uid="uid://f1bw1cbr5pow" path="res://Assets/Tileset/Furniture/Closet.png" id="3_6uy68"]
+[ext_resource type="Texture2D" uid="uid://bawi0uu51e4o1" path="res://Assets/Tileset/Furniture/Fireplace.png" id="4_p8ecx"]
+[ext_resource type="Texture2D" uid="uid://cajip7yxqgie" path="res://Assets/Tileset/Furniture/Others.png" id="5_80iyn"]
+[ext_resource type="Texture2D" uid="uid://c8fhbfdm88f2s" path="res://Assets/Tileset/Furniture/Part 9 copiar.png" id="6_7k2bs"]
+[ext_resource type="Texture2D" uid="uid://bjt4fa4v6fkae" path="res://Assets/Tileset/Furniture/Part 11 copiar.png" id="7_dvhus"]
+[ext_resource type="Texture2D" uid="uid://dbog6yysg4476" path="res://Assets/Tileset/Furniture/Sofa and armchair.png" id="8_o0vla"]
+[ext_resource type="Texture2D" uid="uid://cx26xxwjsrly7" path="res://Assets/Tileset/Furniture/Tables and desks.png" id="9_83fuw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ystil"]
+texture = ExtResource("1_hyhvc")
+22:0/size_in_atlas = Vector2i(2, 3)
+22:0/0 = 0
+22:0/0/texture_origin = Vector2i(0, 8)
+22:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.666667, 8, 2.666667, 8, -29.333334, -8, -29.333334)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_arwd2"]
+texture = ExtResource("2_0lcx4")
+8:0/size_in_atlas = Vector2i(1, 2)
+8:0/0 = 0
+8:0/0/texture_origin = Vector2i(0, 8)
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.6666665, -8, 2.666667, -8, 2.666667, 8, -2.6666665, 8)
+9:0/size_in_atlas = Vector2i(1, 2)
+9:0/0 = 0
+9:0/0/texture_origin = Vector2i(0, 8)
+9:0/0/z_index = 200
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.6666665, -8, 2.666667, -8, 2.666667, 8, -2.6666665, 8)
+10:0/size_in_atlas = Vector2i(1, 2)
+10:0/0 = 0
+10:0/0/texture_origin = Vector2i(0, 8)
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.6666665, -8, 2.666667, -8, 2.666667, 8, -2.6666665, 8)
+11:0/size_in_atlas = Vector2i(1, 2)
+11:0/0 = 0
+11:0/0/texture_origin = Vector2i(0, 8)
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.6666665, -8, 2.666667, -8, 2.666667, 8, -2.6666665, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_psipd"]
+texture = ExtResource("3_6uy68")
+4:24/size_in_atlas = Vector2i(3, 3)
+4:24/0 = 0
+4:24/0/texture_origin = Vector2i(0, 8)
+4:24/0/physics_layer_0/polygon_0/points = PackedVector2Array(-18.666668, -24, 18.666668, -24, 18.666668, 13.333334, -18.666668, 13.333334)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bcg7"]
+texture = ExtResource("4_p8ecx")
+0:7/size_in_atlas = Vector2i(3, 3)
+0:7/0 = 0
+0:7/0/texture_origin = Vector2i(0, 8)
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -29.333334, -8, -18.666668, -18.666668, -18.666668, -18.666668, 18.666668, 18.666668, 18.666668, 18.666668, -18.666668, 8, -18.666668, 8, -29.333334)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fkk6"]
+texture = ExtResource("5_80iyn")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m3ie7"]
+texture = ExtResource("6_7k2bs")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oneby"]
+texture = ExtResource("7_dvhus")
+0:6/size_in_atlas = Vector2i(5, 3)
+0:6/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sarfn"]
+texture = ExtResource("8_o0vla")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8i1c1"]
+texture = ExtResource("9_83fuw")
+14:14/size_in_atlas = Vector2i(4, 2)
+14:14/0 = 0
+14:14/0/z_index = 100
+14:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-29.333334, -13.333334, 29.333336, -13.333334, 29.333336, 8, -29.333334, 8)
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ystil")
+sources/1 = SubResource("TileSetAtlasSource_arwd2")
+sources/2 = SubResource("TileSetAtlasSource_psipd")
+sources/3 = SubResource("TileSetAtlasSource_2bcg7")
+sources/4 = SubResource("TileSetAtlasSource_7fkk6")
+sources/5 = SubResource("TileSetAtlasSource_m3ie7")
+sources/6 = SubResource("TileSetAtlasSource_oneby")
+sources/7 = SubResource("TileSetAtlasSource_sarfn")
+sources/8 = SubResource("TileSetAtlasSource_8i1c1")

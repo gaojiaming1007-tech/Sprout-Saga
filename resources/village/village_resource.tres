@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://brbksqsgx56v1"]
+
+[ext_resource type="Resource" uid="uid://mv2h8dr7ee3f" path="res://resources/village/village_farmland_exist_resource.tres" id="1_4nwh4"]
+[ext_resource type="Script" uid="uid://mbbbqhucdtp5" path="res://structs/level_resource.gd" id="1_7wxeh"]
+[ext_resource type="Resource" uid="uid://cfrfsrcq5jrh1" path="res://resources/village/village_building_resource.tres" id="1_m2gdw"]
+[ext_resource type="Resource" uid="uid://c1f6g811jspu" path="res://resources/village/village_fellable_tree_resource.tres" id="2_m2gdw"]
+
+[resource]
+script = ExtResource("1_7wxeh")
+last_position = Vector2(416.94635, -464.92523)
+farmland_exist_esource = ExtResource("1_4nwh4")
+fellable_tree_exist_resource = ExtResource("2_m2gdw")
+building_resource = ExtResource("1_m2gdw")
+metadata/_custom_type_script = "uid://mbbbqhucdtp5"

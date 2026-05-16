@@ -1,36 +1,32 @@
-[gd_resource type="Resource" script_class="BagResource" format=3]
+[gd_resource type="Resource" script_class="BagResource" format=3 uid="uid://brg4skn5opprv"]
 
-[ext_resource type="Script" path="res://structs/bag_resource.gd" id="1_tunkx"]
-[ext_resource type="Resource" path="res://resources/inventory/weapon/hoe.tres" id="2_1pjs7"]
-[ext_resource type="Resource" path="res://resources/inventory/seed/photo_seed.tres" id="3_jwoun"]
-[ext_resource type="Resource" path="res://resources/inventory/material/wood.tres" id="4_jwoun"]
-[ext_resource type="Resource" path="res://resources/inventory/crop/carrot.tres" id="4_yuoj0"]
+[ext_resource type="Script" uid="uid://08wq20svmn67" path="res://structs/bag_resource.gd" id="1_tunkx"]
+[ext_resource type="Resource" uid="uid://bhwmupipn8j23" path="res://resources/inventory/weapon/hoe.tres" id="2_1pjs7"]
+[ext_resource type="Resource" uid="uid://bwiam10retnt4" path="res://resources/inventory/seed/photo_seed.tres" id="3_jwoun"]
+[ext_resource type="Resource" uid="uid://fys2lryy6hf" path="res://resources/inventory/crop/carrot.tres" id="3_yuoj0"]
+[ext_resource type="Resource" uid="uid://dcl7ltigjr7jf" path="res://resources/inventory/weapon/sickle.tres" id="4_tan7q"]
+[ext_resource type="Resource" uid="uid://dnmx12r4p6cef" path="res://resources/inventory/tool/sprinkler.tres" id="4_yuoj0"]
+[ext_resource type="Resource" uid="uid://58w1k00yi34u" path="res://resources/inventory/tool/fishing_rod.tres" id="5_ak5wg"]
 
 [resource]
 script = ExtResource("1_tunkx")
 bag_inventory = Array[Dictionary]([{
-"count": 1,
-"inventory": ExtResource("2_1pjs7")
-}, {
-"count": 1,
-"inventory": ExtResource("2_1pjs7")
-}, {
-"count": 1,
-"inventory": ExtResource("2_1pjs7")
-}, {
-"count": 1,
-"inventory": ExtResource("2_1pjs7")
-}, {
-"count": 7,
+"count": 5,
 "inventory": ExtResource("3_jwoun")
 }, {
-"count": 15,
-"inventory": ExtResource("4_yuoj0")
+"count": 1,
+"inventory": ExtResource("3_yuoj0")
 }, {
 "count": 16,
 "inventory": ExtResource("2_1pjs7")
 }, {
-"count": 21,
-"inventory": ExtResource("4_jwoun")
-}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}])
+"count": 1,
+"inventory": ExtResource("4_tan7q")
+}, {
+"count": 1,
+"inventory": ExtResource("5_ak5wg")
+}, {
+"count": 1,
+"inventory": ExtResource("4_yuoj0")
+}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}])
 metadata/_custom_type_script = "uid://08wq20svmn67"

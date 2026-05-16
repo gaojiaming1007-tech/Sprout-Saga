@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dpdqs7jodta8w"]
+
+[ext_resource type="PackedScene" uid="uid://bxou106ys0w30" path="res://compoents/inventory_node/inventory_node.tscn" id="1_2bunl"]
+[ext_resource type="Script" uid="uid://virm3v6m2u6h" path="res://managers/utils_manager/children/shop/children/shop_item/shop_item.gd" id="2_dxvb1"]
+[ext_resource type="Texture2D" uid="uid://dsiud3riapqca" path="res://used/ui/buy.atlastex" id="3_iup7x"]
+[ext_resource type="Texture2D" uid="uid://ooxgd57y7cmh" path="res://used/ui/buy_focus.atlastex" id="4_pelwf"]
+
+[node name="ShopItem" unique_id=1514099410 instance=ExtResource("1_2bunl")]
+script = ExtResource("2_dxvb1")
+
+[node name="Buy" type="TextureButton" parent="Root" parent_id_path=PackedInt32Array(1334164850) index="3" unique_id=323297596]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 22.0
+offset_bottom = 21.0
+texture_normal = ExtResource("3_iup7x")
+texture_pressed = ExtResource("4_pelwf")
+texture_hover = ExtResource("3_iup7x")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="Root/Buy" to="." method="_on_buy_pressed"]

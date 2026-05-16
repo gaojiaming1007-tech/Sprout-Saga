@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://clljuhyrto2cy"]
 
 [ext_resource type="Script" uid="uid://lxdh4sosc2j0" path="res://scenes/game/game.gd" id="1_sul5r"]
-[ext_resource type="Resource" uid="uid://cm3rs8d8nten1" path="res://resources/game_resource.tres" id="2_5i0tg"]
+[ext_resource type="Resource" path="res://resources/game_resource.tres" id="2_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://g61pvceycxkt" path="res://compoents/camers/camera.tscn" id="2_7h61r"]
 [ext_resource type="PackedScene" uid="uid://ddwyrm8iob8od" path="res://compoents/character/character.tscn" id="3_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://dyg3hyhrxut6j" path="res://compoents/inventory_info_popup/inventory_info_popup.tscn" id="4_kelw5"]
@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://tjcfusoawdv8" path="res://compoents/global_light/global_light.tscn" id="7_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://d0flb6fup3mb6" path="res://compoents/mouse_focus/mouse_focus.tscn" id="8_87uf6"]
 [ext_resource type="PackedScene" uid="uid://b6ehfsx5co6u8" path="res://compoents/range_prompt/range_prompt.tscn" id="9_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://63vytnqsyj87" path="res://compoents/pause_menu/pause_menu.tscn" id="10_4j704"]
 
-[node name="Game" type="Node2D" unique_id=1182168465 node_paths=PackedStringArray("camera", "character", "inventory_info_popup", "time_record", "global_light", "mouse_focus", "range_prompt")]
+[node name="Game" type="Node2D" unique_id=1182168465 node_paths=PackedStringArray("camera", "character", "inventory_info_popup", "time_record", "global_light", "mouse_focus", "range_prompt", "pause_menu")]
 z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_sul5r")
@@ -22,6 +23,7 @@ game_resource = ExtResource("2_5i0tg")
 global_light = NodePath("GlobalLight")
 mouse_focus = NodePath("MouseFocus")
 range_prompt = NodePath("RangePrompt")
+pause_menu = NodePath("PauseMenu")
 metadata/_custom_type_script = "uid://lxdh4sosc2j0"
 
 [node name="Character" parent="." unique_id=2724270 instance=ExtResource("3_0sr1o")]
@@ -37,3 +39,5 @@ metadata/_custom_type_script = "uid://lxdh4sosc2j0"
 [node name="MouseFocus" parent="." unique_id=1824334482 instance=ExtResource("8_87uf6")]
 
 [node name="RangePrompt" parent="." unique_id=1331660825 instance=ExtResource("9_2a8rs")]
+
+[node name="PauseMenu" parent="." unique_id=1776227849 instance=ExtResource("10_4j704")]

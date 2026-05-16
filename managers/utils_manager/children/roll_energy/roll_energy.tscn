@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://d0copux66e1xl"]
+
+[ext_resource type="Script" uid="uid://cepddclav068n" path="res://managers/utils_manager/children/roll_energy/roll_energy.gd" id="1_0y6e2"]
+[ext_resource type="Texture2D" uid="uid://dsb1grjmeb4mj" path="res://managers/utils_manager/children/roll_energy/roll_energy_back.atlastex" id="2_b0xus"]
+[ext_resource type="Texture2D" uid="uid://crldyqqi8cfse" path="res://managers/utils_manager/children/roll_energy/roll_energy_bar.tres" id="3_7xgpl"]
+[ext_resource type="Texture2D" uid="uid://cafhlryin32y" path="res://managers/utils_manager/children/roll_energy/roll_energy_line.atlastex" id="4_d5pky"]
+
+[node name="RollEnergy" type="Node2D" unique_id=1640769949 node_paths=PackedStringArray("energy", "line")]
+script = ExtResource("1_0y6e2")
+energy = NodePath("NinePatchRect/Inner/Energy")
+line = NodePath("NinePatchRect/Inner/Line")
+metadata/_custom_type_script = "uid://cepddclav068n"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1379557652]
+offset_right = 8.0
+offset_bottom = 42.0
+texture = ExtResource("2_b0xus")
+
+[node name="Inner" type="Control" parent="NinePatchRect" unique_id=608969894]
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 6.0
+offset_bottom = 40.0
+
+[node name="Energy" type="NinePatchRect" parent="NinePatchRect/Inner" unique_id=1604711464]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 3.0
+offset_bottom = 26.0
+texture = ExtResource("3_7xgpl")
+
+[node name="Line" type="Control" parent="NinePatchRect/Inner" unique_id=1055963197]
+anchors_preset = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/Inner/Line" unique_id=997678816]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -1.0
+offset_right = 8.0
+offset_bottom = 3.0
+texture = ExtResource("4_d5pky")
+patch_margin_left = 2
+patch_margin_top = 1
+patch_margin_right = 2
+patch_margin_bottom = 1

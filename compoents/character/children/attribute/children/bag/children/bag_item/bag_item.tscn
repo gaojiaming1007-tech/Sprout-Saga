@@ -1,75 +1,7 @@
 [gd_scene format=3 uid="uid://bei2qom15ugoo"]
 
-[ext_resource type="Script" uid="uid://bacf0bcjrrgdm" path="res://compoents/character/children/attribute/children/bag/children/bag_item/bag_item.gd" id="1_hv2wy"]
-[ext_resource type="Texture2D" uid="uid://xe5jnjx68rv3" path="res://used/ui/bag_item_panel.atlastex" id="2_x5w17"]
-[ext_resource type="Texture2D" uid="uid://dqrr7me0d41lw" path="res://used/ui/bag_item_back_panel.atlastex" id="3_oxwn4"]
+[ext_resource type="PackedScene" uid="uid://bxou106ys0w30" path="res://compoents/inventory_node/inventory_node.tscn" id="1_hv2wy"]
+[ext_resource type="Script" uid="uid://bacf0bcjrrgdm" path="res://compoents/character/children/attribute/children/bag/children/bag_item/bag_item.gd" id="2_x5w17"]
 
-[node name="BagItem" type="Control" unique_id=1541555760 node_paths=PackedStringArray("icon", "count")]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 18.0
-offset_bottom = 18.0
-script = ExtResource("1_hv2wy")
-icon = NodePath("NinePatchRect/Icon")
-count = NodePath("NinePatchRect/Count")
-metadata/_custom_type_script = "uid://bacf0bcjrrgdm"
-
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=199151382]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_x5w17")
-region_rect = Rect2(0, 0, 18, 18)
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-
-[node name="Back" type="NinePatchRect" parent="NinePatchRect" unique_id=1053268711]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -7.0
-offset_top = -7.0
-offset_right = 7.0
-offset_bottom = 7.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_oxwn4")
-region_rect = Rect2(0, 0, 14, 14)
-patch_margin_left = 1
-patch_margin_top = 1
-patch_margin_right = 1
-patch_margin_bottom = 1
-
-[node name="Icon" type="TextureRect" parent="NinePatchRect" unique_id=687061063]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Count" type="Label" parent="NinePatchRect" unique_id=1622084257]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 17.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 6
-text = "99"
+[node name="BagItem" unique_id=1514099410 instance=ExtResource("1_hv2wy")]
+script = ExtResource("2_x5w17")

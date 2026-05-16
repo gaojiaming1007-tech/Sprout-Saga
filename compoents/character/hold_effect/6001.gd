@@ -15,4 +15,7 @@ func play_effect(at_position: Vector2):
     character.update_face_direction(at_position)
     character.update_position_to_center()
     await character.animation_state.start_one_shot(Character.OneShotState.FishingCasting)
-    character.enter_fishing()
+    character.enter_fishing(at_position)
+
+func has_origin():
+    return false

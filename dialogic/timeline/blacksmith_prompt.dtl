@@ -1,0 +1,7 @@
+[style name="speaker"]
+blacksmith_speaker (normal): 你好啊，我是铁匠，有什么需要帮助的吗？
+- 我需要购买一些东西
+	blacksmith_speaker (happy): 那你真是找对人了
+	[signal arg_type="dict" arg="{"npc":"1","type":"shop"}"]
+- 目前还没有
+	blacksmith_speaker (normal): 好的再见

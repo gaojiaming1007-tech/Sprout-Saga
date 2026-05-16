@@ -1,12 +1,9 @@
-[gd_resource type="Resource" script_class="GameResource" format=3]
+[gd_resource type="Resource" script_class="GameResource" format=3 uid="uid://o58e4evhtnsg"]
 
-[ext_resource type="Script" path="res://structs/game_resource.gd" id="1_nntmo"]
+[ext_resource type="Script" uid="uid://ciqp6jok8ifgx" path="res://structs/game_resource.gd" id="1_nntmo"]
 
 [resource]
 script = ExtResource("1_nntmo")
-season = 0
-month = 3
-day = 3
-hour = 20
-minute = 25
-metadata/_custom_type_script = "uid://ciqp6jok8ifgx"
+level = 1
+hour = 10
+minute = 20

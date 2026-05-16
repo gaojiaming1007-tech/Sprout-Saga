@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://co2xcbvp8y5b"]
+
+[ext_resource type="Script" uid="uid://dioekf84f4idm" path="res://managers/prompt_manager/children/message/message.gd" id="1_8d07x"]
+[ext_resource type="Texture2D" uid="uid://ccb3obyul7280" path="res://used/ui/gabber.atlastex" id="2_tamb6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cmkb"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="Message" type="CanvasLayer" unique_id=1579817973 node_paths=PackedStringArray("root", "icon", "label")]
+layer = 50
+script = ExtResource("1_8d07x")
+root = NodePath("Root")
+icon = NodePath("Root/VBoxContainer/Icon")
+label = NodePath("Root/VBoxContainer/Label")
+metadata/_custom_type_script = "uid://dioekf84f4idm"
+
+[node name="Root" type="PanelContainer" parent="." unique_id=272513632]
+offset_right = 52.0
+offset_bottom = 16.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8cmkb")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Root" unique_id=2063921587]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Root/VBoxContainer" unique_id=76159178]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("2_tamb6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Root/VBoxContainer" unique_id=738486316]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "物品拾取"

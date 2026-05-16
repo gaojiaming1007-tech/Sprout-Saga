@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ddesy376l7cgg"]
+
+[ext_resource type="PackedScene" uid="uid://bbpjw6dwxmwb1" path="res://compoents/npc/npc.tscn" id="1_gf5c5"]
+[ext_resource type="Script" uid="uid://bxe3w7khlqca4" path="res://compoents/npc/boatman/boatman.gd" id="2_tgxy5"]
+[ext_resource type="SpriteFrames" uid="uid://cvnmgi7s1a2gy" path="res://compoents/npc/boatman/spriteframes.tres" id="3_1k560"]
+[ext_resource type="BehaviorTree" uid="uid://cl5e3uyixopi" path="res://ai/trees/boatman.tres" id="4_1k560"]
+
+[node name="Boatman" unique_id=1786249641 instance=ExtResource("1_gf5c5")]
+script = ExtResource("2_tgxy5")
+
+[node name="AnimatedSprite2D" parent="Graphics" parent_id_path=PackedInt32Array(254521502) index="0" unique_id=361645]
+sprite_frames = ExtResource("3_1k560")
+animation = &"idle_forward"
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1932952988) index="0" unique_id=1286609069]
+position = Vector2(11, 21)
+
+[node name="BTPlayer" parent="." index="3" unique_id=1464236225]
+behavior_tree = ExtResource("4_1k560")

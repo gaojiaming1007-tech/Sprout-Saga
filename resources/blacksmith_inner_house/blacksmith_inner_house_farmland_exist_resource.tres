@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="FarmlandExistResource" format=3]
+
+[ext_resource type="Script" path="res://structs/farmland_exist_resource.gd" id="1_yabti"]
+
+[resource]
+script = ExtResource("1_yabti")
+metadata/_custom_type_script = "uid://ckxjp8w0qd6yy"

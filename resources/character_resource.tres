@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="CharacterResource" format=3]
+[gd_resource type="Resource" script_class="CharacterResource" format=3 uid="uid://dniatp1lscxpm"]
 
-[ext_resource type="Resource" path="res://resources/bag_resource.tres" id="1_aboam"]
-[ext_resource type="Script" path="res://structs/character_resource.gd" id="1_l285a"]
-[ext_resource type="Resource" path="res://resources/hold_resource.tres" id="2_vagvm"]
+[ext_resource type="Resource" uid="uid://brg4skn5opprv" path="res://resources/bag_resource.tres" id="1_aboam"]
+[ext_resource type="Script" uid="uid://xny7ifjw4b3h" path="res://structs/character_resource.gd" id="1_l285a"]
+[ext_resource type="Resource" uid="uid://8lw6l2xe8w4y" path="res://resources/hold_resource.tres" id="2_vagvm"]
 
 [resource]
 script = ExtResource("1_l285a")
 bag = ExtResource("1_aboam")
 hold = ExtResource("2_vagvm")
-current_hold_select = 5
+current_hold_select = 8
+money = 9571
 metadata/_custom_type_script = "uid://xny7ifjw4b3h"

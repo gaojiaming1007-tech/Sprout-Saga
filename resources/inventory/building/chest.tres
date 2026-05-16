@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://dbjqr35iqorcw"]
+
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_meena"]
+[ext_resource type="Texture2D" uid="uid://xbl616lqbvtl" path="res://used/ui/chest.atlastex" id="2_v48es"]
+
+[resource]
+script = ExtResource("1_meena")
+id = 8002
+texture = ExtResource("2_v48es")
+highlight_texture = ExtResource("2_v48es")
+name = "箱子"
+description = "存储物品"
+type = 8
+price = 20
+stack = true
+lift = true

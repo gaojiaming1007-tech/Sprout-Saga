@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ShopResource" format=3 uid="uid://eri0e1sm4tcp"]
+
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_t73bu"]
+[ext_resource type="Script" uid="uid://cchrnpkf7w7h2" path="res://structs/shop_resource.gd" id="2_cni3c"]
+[ext_resource type="Resource" uid="uid://58w1k00yi34u" path="res://resources/inventory/tool/fishing_rod.tres" id="2_y0gla"]
+[ext_resource type="Resource" uid="uid://dnmx12r4p6cef" path="res://resources/inventory/tool/sprinkler.tres" id="3_3cubp"]
+[ext_resource type="Resource" uid="uid://pqa5hdrmisrn" path="res://resources/inventory/weapon/axe.tres" id="4_hjcal"]
+[ext_resource type="Resource" uid="uid://bhwmupipn8j23" path="res://resources/inventory/weapon/hoe.tres" id="5_x3xty"]
+[ext_resource type="Resource" uid="uid://dcl7ltigjr7jf" path="res://resources/inventory/weapon/sickle.tres" id="6_1wden"]
+[ext_resource type="Resource" uid="uid://b0qshpmqft1cj" path="res://resources/inventory/food/carp.tres" id="7_qyqup"]
+[ext_resource type="Resource" uid="uid://c0nir6ffa0vv6" path="res://resources/inventory/material/wood.tres" id="8_v7vv3"]
+[ext_resource type="Resource" uid="uid://fys2lryy6hf" path="res://resources/inventory/crop/carrot.tres" id="9_b48oa"]
+[ext_resource type="Resource" uid="uid://ciw2b6uwyhsjj" path="res://resources/inventory/crop/photo.tres" id="10_xtbq0"]
+[ext_resource type="Resource" uid="uid://bs2117wh4v5b5" path="res://resources/inventory/seed/carrot_seed.tres" id="11_is4eu"]
+[ext_resource type="Resource" uid="uid://n4b34yl4w4sb" path="res://resources/inventory/building/wood_fence.tres" id="12_3cubp"]
+[ext_resource type="Resource" uid="uid://d4k84a1l0l6nf" path="res://resources/inventory/building/iron_fence.tres" id="13_hjcal"]
+[ext_resource type="Resource" uid="uid://dbjqr35iqorcw" path="res://resources/inventory/building/chest.tres" id="14_x3xty"]
+
+[resource]
+script = ExtResource("2_cni3c")
+inventory_list = Array[ExtResource("1_t73bu")]([ExtResource("2_y0gla"), ExtResource("3_3cubp"), ExtResource("4_hjcal"), ExtResource("5_x3xty"), ExtResource("6_1wden"), ExtResource("7_qyqup"), ExtResource("8_v7vv3"), ExtResource("9_b48oa"), ExtResource("10_xtbq0"), ExtResource("11_is4eu"), ExtResource("12_3cubp"), ExtResource("13_hjcal"), ExtResource("14_x3xty")])
+metadata/_custom_type_script = "uid://cchrnpkf7w7h2"

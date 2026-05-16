@@ -1,13 +1,21 @@
-[gd_resource type="Resource" script_class="FellableTreeExistResource" format=3]
+[gd_resource type="Resource" script_class="FellableTreeExistResource" format=3 uid="uid://dt46qaitnxs26"]
 
-[ext_resource type="Script" path="res://structs/fellable_tree_exist_resource.gd" id="1_7i458"]
-[ext_resource type="Resource" path="res://resources/fellable_tree/maple/maple.tres" id="2_iyppn"]
+[ext_resource type="Script" uid="uid://8w5u3sqkbtuh" path="res://structs/fellable_tree_exist_resource.gd" id="1_7i458"]
+[ext_resource type="Resource" uid="uid://cuyjryob0vcyd" path="res://resources/fellable_tree/maple/maple.tres" id="2_iyppn"]
 
 [resource]
 script = ExtResource("1_7i458")
 trees = Array[Dictionary]([{
+"axe_count": 2,
+"fellable_tree": ExtResource("2_iyppn"),
+"position": Vector2i(-96, 0)
+}, {
 "axe_count": 0,
 "fellable_tree": ExtResource("2_iyppn"),
-"position": Vector2i(64, -32)
+"position": Vector2i(-96, -48)
+}, {
+"axe_count": 2,
+"fellable_tree": ExtResource("2_iyppn"),
+"position": Vector2i(-32, -80)
 }])
 metadata/_custom_type_script = "uid://8w5u3sqkbtuh"

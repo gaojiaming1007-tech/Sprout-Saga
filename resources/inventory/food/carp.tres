@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://b0qshpmqft1cj"]
+
+[ext_resource type="Texture2D" uid="uid://bh1qfihvmu44l" path="res://used/inventory/carp_highlight.atlastex" id="1_53apc"]
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_358lr"]
+[ext_resource type="Texture2D" uid="uid://c2uyudjreecg6" path="res://used/inventory/carp.atlastex" id="2_v30et"]
+
+[resource]
+script = ExtResource("1_358lr")
+id = 4000
+texture = ExtResource("2_v30et")
+highlight_texture = ExtResource("1_53apc")
+name = "鲤鱼"
+description = "刚刚上钩的鱼儿"
+type = 4
+price = 10
+stack = true

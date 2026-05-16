@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameResource" format=3 uid="uid://bxh6hv70vtwak"]
+
+[ext_resource type="Script" uid="uid://ciqp6jok8ifgx" path="res://structs/game_resource.gd" id="1_0o40i"]
+
+[resource]
+script = ExtResource("1_0o40i")
+season = 0
+month = 4
+day = 10
+hour = 10
+metadata/_custom_type_script = "uid://ciqp6jok8ifgx"

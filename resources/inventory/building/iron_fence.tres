@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://d4k84a1l0l6nf"]
+
+[ext_resource type="Script" uid="uid://lh5lwvpng4qt" path="res://structs/inventory.gd" id="1_awocd"]
+[ext_resource type="Texture2D" uid="uid://8ew2aihoqy0" path="res://used/ui/iron_fence.atlastex" id="2_t1frx"]
+
+[resource]
+script = ExtResource("1_awocd")
+id = 8001
+texture = ExtResource("2_t1frx")
+highlight_texture = ExtResource("2_t1frx")
+name = "铁栅栏"
+description = "用来围住田地的"
+type = 8
+price = 10
+stack = true
+lift = true

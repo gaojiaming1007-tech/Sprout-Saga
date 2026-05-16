@@ -7,3 +7,5 @@ extends Resource
 @export var farmland_exist_esource: FarmlandExistResource
 
 @export var fellable_tree_exist_resource: FellableTreeExistResource
+
+@export var building_resource: BuildingResource

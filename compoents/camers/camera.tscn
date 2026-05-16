@@ -4,14 +4,21 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_c854t"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_43rb5"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_wq5wl"]
+[ext_resource type="Script" uid="uid://bhd4nuiu23e7l" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_noise_emitter_2d.gd" id="5_wq5wl"]
+[ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="6_3iyy6"]
 
 [sub_resource type="Resource" id="Resource_c854t"]
 script = ExtResource("4_wq5wl")
 
-[node name="Camera" type="Node2D" unique_id=297410049 node_paths=PackedStringArray("camera2d", "phantom_camera2D")]
+[sub_resource type="Resource" id="Resource_yvkb1"]
+script = ExtResource("6_3iyy6")
+metadata/_custom_type_script = "uid://dimvdouy8g0sv"
+
+[node name="Camera" type="Node2D" unique_id=297410049 node_paths=PackedStringArray("camera2d", "phantom_camera2D", "camera_emitter")]
 script = ExtResource("1_3kc8q")
 camera2d = NodePath("Camera2D")
 phantom_camera2D = NodePath("PhantomCamera2D")
+camera_emitter = NodePath("PhantomCameraNoiseEmitter2D")
 metadata/_custom_type_script = "uid://b2bbex0rt1owp"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=117288432]
@@ -36,4 +43,10 @@ tween_on_load = false
 follow_damping = true
 dead_zone_width = 0.116
 dead_zone_height = 0.16
+noise_emitter_layer = 1
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="PhantomCameraNoiseEmitter2D" type="Node2D" parent="." unique_id=1511216355]
+script = ExtResource("5_wq5wl")
+noise = SubResource("Resource_yvkb1")
+metadata/_custom_type_script = "uid://bhd4nuiu23e7l"

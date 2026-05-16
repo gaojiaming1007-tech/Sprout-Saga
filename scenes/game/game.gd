@@ -3,11 +3,15 @@ class_name Game
 extends Node2D
 
 enum LevelType {
-    Birth
+    Birth,
+    Village,
+    Blacksmith_Inner_House
 }
 
 const LEVEL_TYPE: Dictionary = {
-    LevelType.Birth: "birth"
+    LevelType.Birth: "birth",
+    LevelType.Village: "village",
+    LevelType.Blacksmith_Inner_House: "blacksmith_inner_house"
 }
 
 var current_level_instance: Level
@@ -27,6 +31,8 @@ var current_level_instance: Level
 @export var mouse_focus: MouseFocus
 
 @export var range_prompt: RangePrompt
+
+@export var pause_menu: PauseMenu
 
 signal level_loaded
 
@@ -66,6 +72,7 @@ func load_level(level: LevelType):
             current_level_instance.set_character_postion()
             camera.set_limit()
             camera.set_follow_target(character)
+            SoundManager.play_level_audio(game_resource.level)
             await get_tree().process_frame
             level_loaded.emit()
             callback.call(),
@@ -123,4 +130,26 @@ func _process(_delta):
             "axe_count": 0,
             "position": UtilsManager.transform_position_tile(GameManager.game.character.global_position)
         })
+    if ImGui.Button("fish"):
+        GameManager.game.character.is_hooked = true
+    if ImGui.Button("speaker"):
+        Dialogic.start("begin_speaker")
+    if ImGui.Button("bubble"):
+        var layout = Dialogic.Styles.change_style("bubble", true, true)
+        layout.register_character("res://dialogic/character/character_bubble.dch", GameManager.game.character)
+        Dialogic.start("begin_bubble")
+    if ImGui.Button("shake"):
+        GameManager.game.camera.shake()
+    if ImGui.Button("5:55"):
+        GameManager.game.game_resource.hour = 5
+        GameManager.game.game_resource.minute = 55
+    if ImGui.Button("8:55"):
+        GameManager.game.game_resource.hour = 8
+        GameManager.game.game_resource.minute = 55
+    if ImGui.Button("17:55"):
+        GameManager.game.game_resource.hour = 17
+        GameManager.game.game_resource.minute = 55
+    if ImGui.Button("20:55"):
+        GameManager.game.game_resource.hour = 20
+        GameManager.game.game_resource.minute = 55
     ImGui.End()

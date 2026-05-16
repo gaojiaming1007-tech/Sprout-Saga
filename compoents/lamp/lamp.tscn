@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c2p40leir1jtp"]
+
+[ext_resource type="Script" uid="uid://yudgnm2nm3lx" path="res://compoents/lamp/lamp.gd" id="1_pl146"]
+[ext_resource type="Texture2D" uid="uid://bbildmkasabfd" path="res://compoents/lamp/lamp.atlastex" id="2_8mfgn"]
+[ext_resource type="Texture2D" uid="uid://8ptacu4qdkuv" path="res://resources/light_texture/fade.tres" id="4_kikm6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ebxt0"]
+radius = 6.0
+
+[node name="Lamp" type="Node2D" unique_id=370570861]
+z_index = 400
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_pl146")
+metadata/_custom_type_script = "uid://yudgnm2nm3lx"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=292571177]
+texture = ExtResource("2_8mfgn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=600813787]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=841432132]
+shape = SubResource("CircleShape2D_ebxt0")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=739839566]
+energy = 1.3
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
+texture = ExtResource("4_kikm6")
+texture_scale = 0.2

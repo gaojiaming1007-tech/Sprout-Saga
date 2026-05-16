@@ -1,0 +1,100 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://bb4u7wicprm0i"]
+
+[ext_resource type="Script" uid="uid://cbe6l0cxdjhu8" path="res://ai/tasks/set_interace_visible.gd" id="1_1ieoo"]
+[ext_resource type="Script" uid="uid://bkvrihru7otkq" path="res://ai/tasks/search_destination.gd" id="2_siv8m"]
+[ext_resource type="Script" uid="uid://ccok17f8faxfa" path="res://ai/tasks/move_to_destionation.gd" id="3_83h05"]
+[ext_resource type="Script" uid="uid://dcfy74uyigp5j" path="res://ai/tasks/play_direction_one_shot_animation.gd" id="4_82jm5"]
+[ext_resource type="Script" uid="uid://cewhtxngtuqqp" path="res://ai/tasks/play_direction_animation.gd" id="5_vc2a6"]
+[ext_resource type="Script" uid="uid://ds38rvj860djs" path="res://ai/tasks/await_input.gd" id="6_mfo2y"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_73qj8"]
+
+[sub_resource type="BBVariant" id="BBVariant_uq3ci"]
+type = 1
+saved_value = false
+resource_name = "<null>"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_d35hp"]
+variable = &"is_range"
+value = SubResource("BBVariant_uq3ci")
+
+[sub_resource type="BTAction" id="BTAction_iupae"]
+script = ExtResource("1_1ieoo")
+
+[sub_resource type="BTAction" id="BTAction_fq0jy"]
+script = ExtResource("2_siv8m")
+
+[sub_resource type="BTAction" id="BTAction_4lpyi"]
+script = ExtResource("3_83h05")
+
+[sub_resource type="BTAction" id="BTAction_10l0b"]
+script = ExtResource("4_82jm5")
+animation_name = "start_chew"
+enable_direction = true
+direction = 1
+
+[sub_resource type="BTAction" id="BTAction_47seg"]
+script = ExtResource("5_vc2a6")
+animation_name = "chew"
+enable_direction = true
+direction = 1
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_6gd3m"]
+min_duration = 5.0
+max_duration = 10.0
+
+[sub_resource type="BTAction" id="BTAction_0kum5"]
+script = ExtResource("4_82jm5")
+animation_name = "end_chew"
+enable_direction = true
+direction = 1
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_3hylg"]
+min_duration = 2.0
+max_duration = 4.0
+
+[sub_resource type="BTSequence" id="BTSequence_acmu1"]
+custom_name = " 不在范围"
+children = [SubResource("BTCheckVar_d35hp"), SubResource("BTAction_iupae"), SubResource("BTAction_fq0jy"), SubResource("BTAction_4lpyi"), SubResource("BTAction_10l0b"), SubResource("BTAction_47seg"), SubResource("BTRandomWait_6gd3m"), SubResource("BTAction_0kum5"), SubResource("BTRandomWait_3hylg")]
+
+[sub_resource type="BBVariant" id="BBVariant_pc1ts"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_vfffy"]
+variable = &"is_range"
+value = SubResource("BBVariant_pc1ts")
+
+[sub_resource type="BTAction" id="BTAction_13pbs"]
+script = ExtResource("1_1ieoo")
+visible = true
+
+[sub_resource type="BTAction" id="BTAction_8bjkk"]
+script = ExtResource("5_vc2a6")
+animation_name = "idle"
+enable_direction = true
+direction = 1
+
+[sub_resource type="BTAction" id="BTAction_xwvll"]
+script = ExtResource("6_mfo2y")
+input_key = "steed"
+
+[sub_resource type="BBNode" id="BBNode_tf4a7"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_4smxu"]
+node = SubResource("BBNode_tf4a7")
+method = &"emit_character_steed"
+
+[sub_resource type="BTSequence" id="BTSequence_83687"]
+custom_name = "在范围"
+children = [SubResource("BTCheckVar_vfffy"), SubResource("BTAction_13pbs"), SubResource("BTAction_8bjkk"), SubResource("BTAction_xwvll"), SubResource("BTCallMethod_4smxu")]
+
+[sub_resource type="BTSelector" id="BTSelector_1wyvk"]
+children = [SubResource("BTSequence_acmu1"), SubResource("BTSequence_83687")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_73qj8")
+root_task = SubResource("BTSelector_1wyvk")

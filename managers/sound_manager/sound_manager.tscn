@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ctnrlpbjv8kuo"]
+
+[ext_resource type="Script" uid="uid://bwhbleek5t1f1" path="res://managers/sound_manager/sound_manager.gd" id="1_scsj0"]
+[ext_resource type="AudioStream" uid="uid://bqbuuhvlge1t0" path="res://Assets/Sound/Footsteps_Grass.wav" id="2_4asnh"]
+[ext_resource type="AudioStream" uid="uid://dae3b0iq2asrd" path="res://Assets/Sound/ChestOpen.wav" id="3_kekve"]
+[ext_resource type="AudioStream" uid="uid://cg576aqwmnrn7" path="res://Assets/Sound/ChestClosed.wav" id="4_5cbo6"]
+[ext_resource type="AudioStream" uid="uid://de8tg7wcofbdr" path="res://Assets/Sound/Axe.wav" id="5_5cbo6"]
+[ext_resource type="AudioStream" uid="uid://cmaho6p1tyw0w" path="res://Assets/Sound/Hoe.wav" id="6_lytpb"]
+[ext_resource type="AudioStream" uid="uid://ce5tav8ukric7" path="res://Assets/Sound/Watering.wav" id="7_gp3tu"]
+[ext_resource type="AudioStream" uid="uid://dp420yymgphq7" path="res://Assets/Sound/Sickle.wav" id="8_tptv1"]
+[ext_resource type="AudioStream" uid="uid://bt8kg26148ogu" path="res://Assets/Sound/FishingCasting.wav" id="9_v2yr6"]
+[ext_resource type="AudioStream" uid="uid://jqy2wi8epg5i" path="res://Assets/Sound/DialogueStart.wav" id="10_2ew7w"]
+[ext_resource type="AudioStream" uid="uid://ck3uetrwwcx3j" path="res://Assets/Sound/Spring.ogg" id="11_tj7h8"]
+[ext_resource type="AudioStream" uid="uid://ddc6kdlbb7orl" path="res://Assets/Sound/UIHover.wav" id="11_y1ml4"]
+[ext_resource type="AudioStream" uid="uid://cs6gxcuu1nnpa" path="res://Assets/Sound/Fall.ogg" id="13_27cl6"]
+[ext_resource type="AudioStream" uid="uid://c83rswgnham8o" path="res://Assets/Sound/House.ogg" id="14_x14iq"]
+
+[node name="SoundManager" type="Node" unique_id=33386502]
+process_mode = 3
+script = ExtResource("1_scsj0")
+audio_List = Array[AudioStream]([ExtResource("2_4asnh"), ExtResource("3_kekve"), ExtResource("4_5cbo6"), ExtResource("5_5cbo6"), ExtResource("6_lytpb"), ExtResource("7_gp3tu"), ExtResource("8_tptv1"), ExtResource("9_v2yr6"), ExtResource("10_2ew7w"), ExtResource("11_y1ml4")])
+back_level_audio_list = Array[Dictionary]([{
+"audio": ExtResource("11_tj7h8"),
+"volume": -2
+}, {
+"audio": ExtResource("13_27cl6"),
+"volume": -10
+}, {
+"audio": ExtResource("14_x14iq"),
+"volume": -10
+}])

@@ -1,0 +1,73 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://cl5e3uyixopi"]
+
+[ext_resource type="Script" uid="uid://cewhtxngtuqqp" path="res://ai/tasks/play_direction_animation.gd" id="1_scyuj"]
+[ext_resource type="Script" uid="uid://cbe6l0cxdjhu8" path="res://ai/tasks/set_interace_visible.gd" id="2_naxfo"]
+[ext_resource type="Script" uid="uid://ds38rvj860djs" path="res://ai/tasks/await_input.gd" id="3_1w2wm"]
+[ext_resource type="Script" uid="uid://cd5ogswidrhf5" path="res://ai/tasks/start_bubble_dialogue.gd" id="4_8l4fq"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_wtmcb"]
+var/is_range/name = &"is_range"
+var/is_range/type = 1
+var/is_range/value = false
+var/is_range/hint = 0
+var/is_range/hint_string = ""
+
+[sub_resource type="BBVariant" id="BBVariant_wtmcb"]
+type = 1
+saved_value = false
+resource_name = "false"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_scyuj"]
+variable = &"is_range"
+value = SubResource("BBVariant_wtmcb")
+
+[sub_resource type="BTAction" id="BTAction_naxfo"]
+script = ExtResource("1_scyuj")
+animation_name = "idle"
+enable_direction = true
+direction = -1
+
+[sub_resource type="BTAction" id="BTAction_8l4fq"]
+script = ExtResource("2_naxfo")
+
+[sub_resource type="BTSequence" id="BTSequence_naxfo"]
+custom_name = "不在范围内"
+children = [SubResource("BTCheckVar_scyuj"), SubResource("BTAction_naxfo"), SubResource("BTAction_8l4fq")]
+
+[sub_resource type="BBVariant" id="BBVariant_1w2wm"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_8l4fq"]
+variable = &"is_range"
+value = SubResource("BBVariant_1w2wm")
+
+[sub_resource type="BTAction" id="BTAction_1w2wm"]
+script = ExtResource("1_scyuj")
+animation_name = "idle"
+enable_direction = true
+direction = -1
+
+[sub_resource type="BTAction" id="BTAction_7kbot"]
+script = ExtResource("2_naxfo")
+visible = true
+
+[sub_resource type="BTAction" id="BTAction_o4sg8"]
+script = ExtResource("3_1w2wm")
+input_key = "dialogue"
+
+[sub_resource type="BTAction" id="BTAction_vwwxm"]
+script = ExtResource("4_8l4fq")
+dialogue_name = "boatman_prompt"
+
+[sub_resource type="BTSequence" id="BTSequence_7kbot"]
+custom_name = "在范围内"
+children = [SubResource("BTCheckVar_8l4fq"), SubResource("BTAction_1w2wm"), SubResource("BTAction_7kbot"), SubResource("BTAction_o4sg8"), SubResource("BTAction_vwwxm")]
+
+[sub_resource type="BTSelector" id="BTSelector_scyuj"]
+children = [SubResource("BTSequence_naxfo"), SubResource("BTSequence_7kbot")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_wtmcb")
+root_task = SubResource("BTSelector_scyuj")

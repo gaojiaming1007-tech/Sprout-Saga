@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://bxsmx1kamcgkx"]
 
 [ext_resource type="Script" uid="uid://yewmboqau0bf" path="res://managers/game_manager/game_manager.gd" id="1_lh1k3"]
+[ext_resource type="Resource" uid="uid://bwcsqyvjmx0r7" path="res://resources/setting_resource.tres" id="2_dmudu"]
 
 [node name="GameManager" type="Node2D" unique_id=696454895]
 process_mode = 3
 script = ExtResource("1_lh1k3")
+setting_resource = ExtResource("2_dmudu")
+archive_resource_list = Array[String](["res://resources/game_resource.tres"])

@@ -15,19 +15,66 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Sprout Sage1.0"
-run/main_scene="uid://clljuhyrto2cy"
+run/main_scene="uid://clj82lqwtgtfy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://c7s7e61d44oq2"
 
 [autoload]
 
 ImGuiRoot="*uid://dugmpnsxaagba"
+PhantomCameraManager="*uid://duq6jhf6unyis"
+Dialogic="*uid://xo650ehdmfwx"
+Cursor="*uid://djwpw33d4d8u7"
 GameManager="*uid://bxsmx1kamcgkx"
+SoundManager="*uid://ctnrlpbjv8kuo"
+PromptManager="*uid://x3hntxjphejr"
 UtilsManager="*uid://dtmfq1hgse1vp"
 LoadingManager="*uid://1xtc63hpoub"
 ResourceManager="*uid://ddo1mqskyb7nl"
-PhantomCameraManager="*uid://duq6jhf6unyis"
-Cursor="*uid://djwpw33d4d8u7"
+ParticleManager="*uid://c16xaednyakox"
+SceneManager="*uid://dreu6mjxphryx"
+
+[dialogic]
+
+directories/dch_directory={
+"blacksmith_speaker": "res://dialogic/character/blacksmith_speaker.dch",
+"boatman_bubble": "res://dialogic/character/boatman_bubble.dch",
+"character_bubble": "res://dialogic/character/character_bubble.dch",
+"character_sperker": "res://dialogic/character/character_sperker.dch"
+}
+directories/dtl_directory={
+"blacksmith_prompt": "res://dialogic/timeline/blacksmith_prompt.dtl",
+"boatman_prompt": "res://dialogic/timeline/boatman_prompt.dtl"
+}
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+audio/max_channels=4.0
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=false
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
+glossary/default_case_sensitive=true
+layout/style_list=["res://dialogic/style/speaker.tres", "res://dialogic/style/bubble.tres"]
+layout/default_style="res://dialogic/style/speaker.tres"
+variables={
+"boatman": {
+"current_level": "birth",
+"task_state": 0
+}
+}
 
 [display]
 
@@ -39,7 +86,11 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/awesome_custom_cursor/plugin.cfg", "res://addons/imgui-godot/plugin.cfg", "res://addons/inventory_editor/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/awesome_custom_cursor/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/imgui-godot/plugin.cfg", "res://addons/inventory_editor/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+
+[global_group]
+
+schedule=""
 
 [gui]
 
@@ -72,11 +123,6 @@ run={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
-bag_switch={
-"deadzone": 0.2,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-]
-}
 pick={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":102,"location":0,"echo":false,"script":null)
@@ -90,6 +136,41 @@ left_mouse={
 reel={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
+roll_energy={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
+dialogic_default_action={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+dialogue={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
+]
+}
+Chest={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
+]
+}
+accpet={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
+steed={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+pause={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

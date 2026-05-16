@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://by6waso0mjpjp"]
+
+[ext_resource type="Script" uid="uid://dryafks4g6m5j" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_4jxq7"]
+[ext_resource type="Script" uid="uid://yp4grg0wgv4w" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/speaker_portrait_textbox_layer.gd" id="1_7jt4d"]
+[ext_resource type="Texture2D" uid="uid://cahhe3tc0og8r" path="res://used/ui/speaker_panel.atlastex" id="2_hywg0"]
+[ext_resource type="Script" uid="uid://bpsa27q8umxuj" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="2_y0h34"]
+[ext_resource type="Script" uid="uid://db0nysxisdui1" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_11puy"]
+[ext_resource type="Script" uid="uid://cmpw4ygy5npup" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="5_sr2qw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_liigb"]
+texture = ExtResource("2_hywg0")
+texture_margin_left = 3.0
+texture_margin_top = 4.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+region_rect = Rect2(0, 0, 48, 48)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmg1w"]
+bg_color = Color(0.254902, 0.254902, 0.254902, 1)
+skew = Vector2(0.073, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="TextboxWithSpeakerPortrait" type="Control" unique_id=1394692168]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7jt4d")
+box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/default_stylebox.tres"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=421674676]
+layer = 50
+
+[node name="Anchor" type="Control" parent="CanvasLayer" unique_id=1866838044]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/Anchor" unique_id=1915405325]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_liigb")
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/Anchor/Panel" unique_id=1368550435]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 15
+
+[node name="PortraitPanel" type="Panel" parent="CanvasLayer/Anchor/Panel/HBox" unique_id=1293809517]
+unique_name_in_owner = true
+clip_children = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dmg1w")
+
+[node name="PortraitBackgroundColor" type="ColorRect" parent="CanvasLayer/Anchor/Panel/HBox/PortraitPanel" unique_id=1029262735]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -3.0
+offset_right = 7.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.231373)
+
+[node name="DialogicNode_PortraitContainer" type="Control" parent="CanvasLayer/Anchor/Panel/HBox/PortraitPanel/PortraitBackgroundColor" unique_id=784206700]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4jxq7")
+mode = 1
+container_ids = PackedStringArray("1")
+debug_character_portrait = "speaker"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Anchor/Panel/HBox" unique_id=968187353]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="DialogicNode_NameLabel" type="Label" parent="CanvasLayer/Anchor/Panel/HBox/VBoxContainer" unique_id=1095133872]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Name"
+script = ExtResource("2_y0h34")
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="CanvasLayer/Anchor/Panel/HBox/VBoxContainer" unique_id=2020061890 node_paths=PackedStringArray("textbox_root")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "Some text"
+scroll_following = true
+visible_characters_behavior = 1
+script = ExtResource("3_11puy")
+textbox_root = NodePath("../../..")
+
+[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="CanvasLayer/Anchor/Panel/HBox/VBoxContainer/DialogicNode_DialogText" unique_id=968146562]
+script = ExtResource("5_sr2qw")

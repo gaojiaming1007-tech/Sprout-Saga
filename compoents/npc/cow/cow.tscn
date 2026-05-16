@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://doakgc3mtgn5n"]
+
+[ext_resource type="PackedScene" uid="uid://bbpjw6dwxmwb1" path="res://compoents/npc/npc.tscn" id="1_efu4g"]
+[ext_resource type="Script" uid="uid://cqyw0mgl41ae8" path="res://compoents/npc/cow/cow.gd" id="2_gjxgb"]
+[ext_resource type="SpriteFrames" uid="uid://dwt0a6sjcgf05" path="res://compoents/npc/cow/spriteframes.tres" id="3_2tdhp"]
+[ext_resource type="BehaviorTree" uid="uid://dx8q80bnbamyf" path="res://ai/trees/cow.tres" id="4_4vss2"]
+
+[node name="Cow" unique_id=1786249641 instance=ExtResource("1_efu4g")]
+script = ExtResource("2_gjxgb")
+
+[node name="AnimatedSprite2D" parent="Graphics" parent_id_path=PackedInt32Array(254521502) index="0" unique_id=361645]
+position = Vector2(0, -5)
+sprite_frames = ExtResource("3_2tdhp")
+animation = &"walk_parallel"
+
+[node name="BTPlayer" parent="." index="3" unique_id=1464236225]
+behavior_tree = ExtResource("4_4vss2")

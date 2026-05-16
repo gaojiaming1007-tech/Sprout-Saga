@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="BuildingResource" format=3 uid="uid://cfrfsrcq5jrh1"]
+
+[ext_resource type="Script" uid="uid://qn4x5afnxsi3" path="res://structs/building_resource.gd" id="1_i8jvc"]
+[ext_resource type="Resource" uid="uid://bs2117wh4v5b5" path="res://resources/inventory/seed/carrot_seed.tres" id="1_qfmfu"]
+
+[resource]
+script = ExtResource("1_i8jvc")
+buildings = {
+0: [Vector2i(18, -33), Vector2i(18, -32), Vector2i(18, -31), Vector2i(18, -30), Vector2i(19, -30), Vector2i(20, -30), Vector2i(20, -31), Vector2i(20, -32), Vector2i(20, -33), Vector2i(12, -39), Vector2i(12, -38), Vector2i(13, -38), Vector2i(12, -40), Vector2i(12, -41), Vector2i(13, -41), Vector2i(14, -42), Vector2i(13, -42), Vector2i(15, -42), Vector2i(16, -39), Vector2i(15, -38), Vector2i(14, -38), Vector2i(15, -39), Vector2i(16, -40), Vector2i(16, -41), Vector2i(16, -42), Vector2i(17, -42)],
+1: [Vector2i(18, -36), Vector2i(18, -37), Vector2i(18, -38), Vector2i(17, -38), Vector2i(16, -38), Vector2i(16, -37), Vector2i(16, -36)],
+2: [Vector2i(13, -27)]
+}
+chests = {
+Vector2i(13, -27): {
+"chest": [{
+"count": 22,
+"inventory": ExtResource("1_qfmfu")
+}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+"colums": 4
+}
+}
+metadata/_custom_type_script = "uid://qn4x5afnxsi3"

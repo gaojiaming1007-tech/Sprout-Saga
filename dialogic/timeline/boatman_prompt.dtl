@@ -1,0 +1,35 @@
+boatman_bubble: 你好啊，小伙汁，需要什么帮助吗？
+character_bubble: 我想想
+- 可以带我一程吗？
+	boatman_bubble: 当然，想去哪里啊？
+	if {boatman.current_level} == "birth":
+		character_bubble: 我要去
+		- 城镇
+			[signal arg_type="dict" arg="{"target_level":"1","type":"transfer"}"]
+	[signal arg="Dictionary"]
+	elif {boatman.current_level} == "village":
+		character_bubble: 我要去
+		- 小岛
+			[signal arg_type="dict" arg="{"target_level":"0","type":"transfer"}"]
+- 任务
+	if {boatman.task_state}==0:
+		boatman_bubble: 可以帮我带些东西吗？
+		character_bubble: 我想想....
+		- 当然
+			boatman_bubble: 谢谢！
+			[signal arg_type="dict" arg="{"id":"1","type":"add_task"}"]
+		- 我现在不方便，等下再来
+			boatman_bubble: 稍后再见
+	elif {boatman.task_state}==1:
+		boatman_bubble: 我的东西完成了吗？
+		character_bubble: 还没有
+	elif {boatman.task_state}==2:
+		boatman_bubble: 我的东西完成了吗？
+		character_bubble: 是的，给你！
+		boatman_bubble: 谢谢，这是给你的奖励
+		[signal arg_type="dict" arg="{"id":"1","type":"over_task"}"]
+	else:
+		boatman_bubble: 目前没有任务了
+		character_bubble: 好的，有事后面还可以找我。
+- 谢谢，我稍后再来
+	boatman_bubble: 稍后再见

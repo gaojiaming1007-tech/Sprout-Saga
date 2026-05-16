@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LevelResource" format=3]
+
+[ext_resource type="Script" path="res://structs/level_resource.gd" id="1_644np"]
+[ext_resource type="Resource" path="res://resources/blacksmith_inner_house/blacksmith_inner_building_resource.tres" id="1_glmhb"]
+[ext_resource type="Resource" path="res://resources/blacksmith_inner_house/blacksmith_inner_house_farmland_exist_resource.tres" id="1_q6fop"]
+[ext_resource type="Resource" path="res://resources/blacksmith_inner_house/blacksmith_inner_house_fellable_tree_exist_resource.tres" id="2_glmhb"]
+
+[resource]
+script = ExtResource("1_644np")
+last_position = Vector2(214.8248, 220.28308)
+farmland_exist_esource = ExtResource("1_q6fop")
+fellable_tree_exist_resource = ExtResource("2_glmhb")
+building_resource = ExtResource("1_glmhb")
+metadata/_custom_type_script = "uid://mbbbqhucdtp5"

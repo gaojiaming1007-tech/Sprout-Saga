@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InteractKeyboardResource" format=3 uid="uid://471p8fnqhoub"]
 
-[ext_resource type="Texture2D" uid="uid://bgl1v2e7wdfob" path="res://used/keyboard/r.atlastex" id="1_in54y"]
+[ext_resource type="Texture2D" uid="uid://bgl1v2e7wdfob" path="res://used/keyboard/f.atlastex" id="1_in54y"]
 [ext_resource type="Script" uid="uid://dkvf1vbqd4q2k" path="res://structs/interact_keyboard_resource.gd" id="1_lvqsg"]
 [ext_resource type="Texture2D" uid="uid://b5j1ya47kuppe" path="res://used/keyboard/space.atlastex" id="2_hmdfo"]
 

@@ -24,7 +24,7 @@ func update_texture_limit():
     for y in range(-last_count, last_count + 1):
         for x in range(-last_count, last_count + 1):
             var p = character.global_position + Vector2(x * 16, y * 16)
-            if abs(y) + abs(x) > last_count && !has_oblique_angle():
+            if (abs(y) + abs(x) > last_count && !has_oblique_angle()) || (x == 0 && y == 0 && !has_origin()):
                 colors.push_back(false_color)
                 range_result.push_back(false)
             else:
@@ -50,4 +50,8 @@ func get_cell_limit(at_position: Vector2):
 
 ## 斜角的方块是否可以进行逻辑判断（不需要才去重写 返回false即可）
 func has_oblique_angle():
+    return true
+
+## 是否需要判断玩家站立位置
+func has_origin():
     return true

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://x3hntxjphejr"]
+
+[ext_resource type="Script" uid="uid://bgtj2r7djdshe" path="res://managers/prompt_manager/prompt_manager.gd" id="1_ti0bg"]
+
+[node name="PromptManager" type="Node" unique_id=2069991252]
+process_mode = 3
+script = ExtResource("1_ti0bg")

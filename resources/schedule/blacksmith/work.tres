@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BlacksmithWork" format=3 uid="uid://cx5j5qhgvtbnj"]
+
+[ext_resource type="Script" uid="uid://c30d121fc5jf0" path="res://resources/schedule/blacksmith/work.gd" id="1_ntxar"]
+
+[resource]
+script = ExtResource("1_ntxar")
+start_place = "rest"
+target_place = "work"
+hour = 9
+end_hour = 18
+metadata/_custom_type_script = "uid://c30d121fc5jf0"

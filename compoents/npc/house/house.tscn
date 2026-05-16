@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dikk84hh4us3i"]
+
+[ext_resource type="Script" uid="uid://degot4j7jybjp" path="res://compoents/npc/house/house.gd" id="1_5nqdd"]
+[ext_resource type="PackedScene" uid="uid://cd5yb3idl7t56" path="res://compoents/transfer_area/transfer_area.tscn" id="2_88sd2"]
+
+[node name="House" type="Node2D" unique_id=105240244]
+z_index = 400
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_5nqdd")
+metadata/_custom_type_script = "uid://degot4j7jybjp"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2122584744]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=533886956]
+
+[node name="TransferArea" parent="Sprite2D" unique_id=122686597 instance=ExtResource("2_88sd2")]
